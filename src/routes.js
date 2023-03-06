@@ -47,17 +47,17 @@ import Icon from "@mui/material/Icon";
 const definedRoutes = [
   {
     type: "collapse",
-    name: "Dashboard",
-    key: "dashboard",
-    icon: <Icon fontSize="small">dashboard</Icon>,
+    name: "Audience Dashboard",
+    key: "AudienceDashboard",
+    icon: <Icon fontSize="small"></Icon>,
     route: "/dashboard",
     component: <Dashboard />,
   },
   {
     type: "collapse",
-    name: "Tables",
-    key: "tables",
-    icon: <Icon fontSize="small">table_view</Icon>,
+    name: "Import Audience Segemnt",
+    key: "ImportAudienceSegemnt",
+    icon: <Icon fontSize="small"></Icon>,
     route: "/tables",
     component: null,
   },
@@ -65,7 +65,7 @@ const definedRoutes = [
     type: "collapse",
     name: "Notifications",
     key: "notifications",
-    icon: <Icon fontSize="small">notifications</Icon>,
+    icon: <Icon fontSize="small"></Icon>,
     route: "/notifications",
     component: null,
   }
