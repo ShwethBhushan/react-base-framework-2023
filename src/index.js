@@ -1,11 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-import Header from './components/Header'
-import Products from './components/Products'
-import NewProduct from './components/NewProduct'
-import EditProduct from './components/EditProduct'
+
 import { BrowserRouter as Router, Route, Switch, Routes } from 'react-router-dom'
 
 // Redux
@@ -19,20 +15,24 @@ import { createRoot } from "react-dom/client";
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 
+import Layout from '../src/components/Layout'
+import { MaterialUIControllerProvider } from "../src/context";
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
     <Router>
         <Provider store={ store }>
-            <Header />
+        <MaterialUIControllerProvider>
+            <Layout />
             <div>
-            <Routes>
-                <Route exact path='/' element={<Products />} />
+            {/* <Routes>
+                <Route exact path='/' element={<index />} />
                 <Route exact path='/products/new' element={<NewProduct />} />
                 <Route exact path='/products/edit/:id' element={<EditProduct />} />
-            </Routes>
+            </Routes> */}
             </div>
+        </MaterialUIControllerProvider>
         </Provider>
     </Router>
   );
