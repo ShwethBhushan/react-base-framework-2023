@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // react-router-dom components
+import React from "react";
 import { Link } from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
@@ -24,8 +25,8 @@ import { Breadcrumbs as MuiBreadcrumbs } from "@mui/material";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
-import MDBox from "../../../genericComponents/MDBox";
-import MDTypography from "../../../genericComponents/MDTypography";
+import MDBox from "../../genericComponents/MDBox";
+import MDTypography from "../../genericComponents/MDTypography";
 
 function Breadcrumbs({ icon, title, route, light }) {
   const routes = route.slice(0, -1);

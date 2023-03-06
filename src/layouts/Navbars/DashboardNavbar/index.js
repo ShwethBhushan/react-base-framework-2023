@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState, useEffect } from "react";
+import React,{ useState, useEffect } from "react";
 
 // react-router components
 import { useLocation, Link } from "react-router-dom";
@@ -29,8 +29,8 @@ import Menu from "@mui/material/Menu";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
-import MDBox from "../../../../genericComponents/MDBox";
-import MDInput from "../../../../genericComponents/MDInput/MDInputRoot";
+import MDBox from "../../../genericComponents/MDBox";
+import MDInput from "../../../genericComponents/MDInput/MDInputRoot";
 
 // Material Dashboard 2 React example components
 import Breadcrumbs from "../../Breadcrumbs";
@@ -51,7 +51,7 @@ import {
   setTransparentNavbar,
   setMiniSidenav,
   setOpenConfigurator,
-} from "../../../../context/index";
+} from "../../../context";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -136,7 +136,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
             <MDBox pr={1}>
-              <MDInput label="Search here" />
+             
             </MDBox>
             <MDBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in/basic">

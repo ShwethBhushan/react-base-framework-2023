@@ -15,7 +15,7 @@ import { createRoot } from "react-dom/client";
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 
-import Layout from '../src/components/Layout'
+import App from './App';
 import { MaterialUIControllerProvider } from "../src/context";
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -24,14 +24,7 @@ root.render(
     <Router>
         <Provider store={ store }>
         <MaterialUIControllerProvider>
-            <Layout />
-            <div>
-            {/* <Routes>
-                <Route exact path='/' element={<index />} />
-                <Route exact path='/products/new' element={<NewProduct />} />
-                <Route exact path='/products/edit/:id' element={<EditProduct />} />
-            </Routes> */}
-            </div>
+           <App/>
         </MaterialUIControllerProvider>
         </Provider>
     </Router>

@@ -13,7 +13,7 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useEffect } from "react";
+import React,{ useEffect } from "react";
 
 // react-router-dom components
 import { useLocation, NavLink } from "react-router-dom";
@@ -28,16 +28,16 @@ import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDButton from "components/MDButton";
+import MDBox from "../../genericComponents/MDBox";
+import MDTypography from "../../genericComponents/MDTypography";
+import MDButton from "../../genericComponents/MDButton";
 
 // Material Dashboard 2 React example components
-import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
+import SidenavCollapse from "../Sidenav/SidenavCollapse";
 
 // Custom styles for the Sidenav
-import SidenavRoot from "examples/Sidenav/SidenavRoot";
-import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
+import SidenavRoot from "../Sidenav/SidenavRoot";
+import sidenavLogoLabel from "../Sidenav/styles/sidenav";
 
 // Material Dashboard 2 React context
 import {
@@ -45,7 +45,7 @@ import {
   setMiniSidenav,
   setTransparentSidenav,
   setWhiteSidenav,
-} from "context";
+} from "../../context";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
@@ -179,19 +179,6 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
         }
       />
       <List>{renderRoutes}</List>
-      <MDBox p={2} mt="auto">
-        <MDButton
-          component="a"
-          href="https://www.creative-tim.com/product/material-dashboard-pro-react"
-          target="_blank"
-          rel="noreferrer"
-          variant="gradient"
-          color={sidenavColor}
-          fullWidth
-        >
-          upgrade to pro
-        </MDButton>
-      </MDBox>
     </SidenavRoot>
   );
 }

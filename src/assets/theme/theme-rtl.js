@@ -30,7 +30,7 @@ import globals from "../../assets/theme/base/globals";
 import boxShadow from  "../../assets/theme/functions/boxShadow"
 import hexToRgb from "../../assets/theme/functions/hexToRgb";
 import linearGradient from "../../assets/theme/functions/linearGradient";
-import pxToRem from "assets/theme/functions/pxToRem";
+import pxToRem from "../../assets/theme/functions/pxToRem";
 import rgba from "../../assets/theme/functions/rgba";
 
 // Material Dashboard 2 React components base styles for @mui material components

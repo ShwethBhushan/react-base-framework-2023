@@ -14,6 +14,7 @@ Coded by www.creative-tim.com
 */
 
 // prop-types is a library for typechecking of props
+import React from "react";
 import PropTypes from "prop-types";
 
 // @mui material components
@@ -21,11 +22,11 @@ import Link from "@mui/material/Link";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
-import MDBox from "../../../genericComponents/MDBox";
-import MDTypography from "../../../genericComponents/MDTypography";
+import MDBox from "../../genericComponents/MDBox";
+import MDTypography from "../../genericComponents/MDTypography";
 
 // Material Dashboard 2 React base styles assets/theme/base/typography
-import typography from "../../../assets/theme/base/typography"
+import typography from "../../assets/theme/base/typography"
 
 function Footer({ company, links }) {
   const { href, name } = company;

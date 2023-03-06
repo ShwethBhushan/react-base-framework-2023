@@ -13,6 +13,8 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import React from "react";
+
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -23,7 +25,7 @@ import ListItemText from "@mui/material/ListItemText";
 import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
+import MDBox from "../../genericComponents/MDBox";
 
 // Custom styles for the SidenavCollapse
 import {
@@ -31,10 +33,10 @@ import {
   collapseIconBox,
   collapseIcon,
   collapseText,
-} from "examples/Sidenav/styles/sidenavCollapse";
+} from "../Sidenav/styles/sidenavCollapse";
 
 // Material Dashboard 2 React context
-import { useMaterialUIController } from "context";
+import { useMaterialUIController } from "../../context";
 
 function SidenavCollapse({ icon, name, active, ...rest }) {
   const [controller] = useMaterialUIController();
