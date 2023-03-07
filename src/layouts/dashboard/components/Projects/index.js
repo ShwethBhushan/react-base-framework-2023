@@ -26,10 +26,10 @@ import MDBox from "../../../../genericComponents/MDBox";
 import MDTypography from "../../../../genericComponents/MDTypography";
 
 // Material Dashboard 2 React examples
-import DataTable from "examples/Tables/DataTable";
+import DataTable from "../../../../components/UIComponents/Tables/DataTable";
 
 // Data
-import data from "layouts/dashboard/components/Projects/data";
+import data from "../Projects/data";
 
 function Projects() {
   const { columns, rows } = data();

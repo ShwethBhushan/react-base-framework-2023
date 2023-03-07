@@ -16,6 +16,7 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
+import React from "react";
 import Tooltip from "@mui/material/Tooltip";
 import MDBox from "../../../../../genericComponents/MDBox";
 import MDTypography from "../../../../../genericComponents/MDTypography";

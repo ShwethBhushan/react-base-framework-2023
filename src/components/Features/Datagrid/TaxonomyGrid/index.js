@@ -7,6 +7,7 @@ import Card from "@mui/material/Card";
 
 // Material Dashboard 2 React components
 import MDBox from "../../../../genericComponents/MDBox";
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import MDTypography from "../../../../genericComponents/MDTypography";
 import TaxonomyGridAction from './TaxonomyGridAction';
 const rows = [
@@ -51,6 +52,8 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test1",
             daLineItem: "test1",
             daLineItemName: "test1",
+            createdBy: "Barbara",
+            ReviewedBy: "Hale Steve"
         },
         {
             id: 12,
@@ -65,6 +68,8 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test2",
             daLineItem: "test2",
             daLineItemName: "test2",
+            createdBy: "Barbara",
+            ReviewedBy: "Hale Steve"
         },
         {
             id: 3,
@@ -79,6 +84,8 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test3",
             daLineItem: "test3",
             daLineItemName: "test3",
+            createdBy: "Barbara",
+            ReviewedBy: "Hale Steve"
         },
         {
             id: 4,
@@ -93,6 +100,8 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test4",
             daLineItem: "test4",
             daLineItemName: "test4",
+            createdBy: "Barbara",
+            ReviewedBy: "Hale Steve"
         },
         {
             id: 5,
@@ -107,122 +116,64 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test5",
             daLineItem: "test5",
             daLineItemName: "test5",
+            createdBy: "Barbara",
+            ReviewedBy: "Hale Steve"
         },
     ];
-
-    const handleView = (params) => {
-        console.log("Viewing ", params?.row?._id, params);
-    };
-    const handleEdit = (params) => {
-        console.log("Editing ", params?.row?._id, params);
-    };
-    const handleDelete = (params) => {
-        console.log("Deleting ", params?.row?._id, params);
-    };
     const columnsGrid = [
         {
             field: "systemId",
-            renderHeader: () => <span className="headername">{"System Id "}</span>,
-            width: 80,
-            editable: true,
+            renderHeader: () => <span className="headername">{"Taxonomy Version "}</span>,
+            width: 200,
+            editable: false,
         },
         {
             field: "taxonomyId",
-            renderHeader: () => <span className="headername">{"Taxonomy Id "}</span>,
-            width: 90,
+            renderHeader: () => <span className="headername">{"Status "}</span>,
+            width: 120,
             editable: true,
         },
         {
             field: "onBoarderId",
-            renderHeader: () => <span className="headername">{"On Boarder Id"}</span>,
-            width: 95,
+            renderHeader: () => <span className="headername">{"Completed Date Time"}</span>,
+            width: 120,
             editable: true,
         },
         {
-            field: "taxonomyName",
-            renderHeader: () => <span className="headername">{"Taxonomy Name"}</span>,
-            width: 200,
+            field: "createdBy",
+            renderHeader: () => <span className="headername">{"Created By"}</span>,
+            width: 120,
             editable: true,
         },
         {
-            field: "subGroup",
-            renderHeader: () => <span className="headername">{"Sub Group"}</span>,
-            width: 80,
+            field: "ReviewedBy",
+            renderHeader: () => <span className="headername">{"Reviewer"}</span>,
+            width: 120,
             editable: true,
-        },
-        {
-            field: "description",
-            renderHeader: () => <span className="headername">{"Description"}</span>,
-            width: 80,
-            editable: true,
-        },
-        {
-            field: "royalty",
-            renderHeader: () => <span className="headername">{"Royalty"}</span>,
-            width: 80,
-            editable: true,
-        },
-        {
-            field: "dcpm",
-            renderHeader: () => <span className="headername">{"DCPM"}</span>,
-            width: 60,
-            editable: true,
-        },
-        {
-            field: "taxonomyPath",
-            renderHeader: () => <span className="headername">{"Taxonomy Path"}</span>,
-            width: 180,
-            editable: true,
-        },
-        {
-            field: "daLineItem",
-            width: 90,
-            renderHeader: () => <span className="headername">{"DA LineItem"}</span>,
-            editable: true,
-        },
-        {
-            field: "daLineItemName",
-            width: 130,
-            renderHeader: () => (
-                <span className="headername">{"DA LineItem Name"}</span>
-            ),
-            editable: true,
-        },
-        {
-            field: "actions",
-            renderHeader: () => <span className="headername">{"Action"}</span>,
-            width: 140,
-            type: "actions",
-            renderCell: (params) => (
-                <>
-                    <TaxonomyGridAction {...{ params, rowId }} />
-                </>
-            ),
-        },
+        }
     ];
+    const theme = createTheme({
+        typography: {
+          allVariants: {
+            fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
+            textTransform: 'none',
+            fontSize: 18,
+            fontWeight: 300
+          },
+        },
+      });
     const [pageSize, setPageSize] = useState(5);
     const [rowId, setRowId] = useState(null);
     return (
-        <MDBox pt={6} pb={3}>
+        <ThemeProvider theme={theme}>
+
+        <MDBox pt={2} pb={3}>
             <Grid container spacing={6}>
                 <Grid item xs={12}>
                     <Card>
-                        <MDBox
-                            mx={2}
-                            mt={-3}
-                            py={3}
-                            px={2}
-                            variant="gradient"
-                            bgColor="info"
-                            borderRadius="lg"
-                            coloredShadow="info"
-                        >
-                            <MDTypography variant="h6" color="white">
-                                Authors Table
-                            </MDTypography>
-                        </MDBox>
+                        
                         <MDBox pt={3}>
-                            <div style={{ height: 450 }}>
+                            <div style={{ height: 450}}>
                                 <DataGrid
                                     rows={rowsData}
                                     columns={columnsGrid}
@@ -248,5 +199,6 @@ export default function TaxonomyGrid() {
                 </Grid>
             </Grid>
         </MDBox>
+        </ThemeProvider>
     );
 }

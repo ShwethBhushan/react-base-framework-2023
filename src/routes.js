@@ -41,6 +41,7 @@ import ImportExportIcon from '@mui/icons-material/ImportExport';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 // Material Dashboard 2 React layouts
 import Dashboard from "./layouts/dashboard";
+import Tables from "./containers/tables"
 import Notifications from "./layouts/NotificationItem";
 
 // @mui icons
@@ -61,7 +62,7 @@ const definedRoutes = [
     key: "ImportAudienceSegment",
     icon: <ImportExportIcon />,
     route: "/tables",
-    component: null,
+    component: <Tables />,
   },
   {
     type: "collapse",

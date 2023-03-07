@@ -14,15 +14,15 @@ Coded by www.creative-tim.com
 */
 
 // @mui material components
+import React from "react";
 import Card from "@mui/material/Card";
-import Icon from "@mui/material/Icon";
-import React from 'react'
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 // Material Dashboard 2 React components
 import MDBox from "../../../../genericComponents/MDBox";
 import MDTypography from "../../../../genericComponents/MDTypography";
 
 // Material Dashboard 2 React example components
-import TimelineItem from "../../../../components/UIComponents/TimeLine/TimelineItem";
+import TimelineItem from "../TimelineItem";
 
 function OrdersOverview() {
   return (
@@ -34,7 +34,7 @@ function OrdersOverview() {
         <MDBox mt={0} mb={2}>
           <MDTypography variant="button" color="text" fontWeight="regular">
             <MDTypography display="inline" variant="body2" verticalAlign="middle">
-              <Icon sx={{ color: ({ palette: { success } }) => success.main }}>arrow_upward</Icon>
+              <ArrowUpwardIcon />
             </MDTypography>
             &nbsp;
             <MDTypography variant="button" color="text" fontWeight="medium">
