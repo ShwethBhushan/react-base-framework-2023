@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 // react-router-dom components
 import React from "react";
 import { Link } from "react-router-dom";
-
+import HomeIcon from '@mui/icons-material/Home';
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
 
@@ -48,7 +48,7 @@ function Breadcrumbs({ icon, title, route, light }) {
             opacity={light ? 0.8 : 0.5}
             sx={{ lineHeight: 0 }}
           >
-            <Icon>{icon}</Icon>
+            <HomeIcon />
           </MDTypography>
         </Link>
         {routes.map((el) => (

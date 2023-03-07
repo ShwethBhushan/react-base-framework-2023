@@ -16,13 +16,13 @@ Coded by www.creative-tim.com
 // @mui material components
 import Card from "@mui/material/Card";
 import Icon from "@mui/material/Icon";
-
+import React from 'react'
 // Material Dashboard 2 React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from "../../../../genericComponents/MDBox";
+import MDTypography from "../../../../genericComponents/MDTypography";
 
 // Material Dashboard 2 React example components
-import TimelineItem from "examples/Timeline/TimelineItem";
+import TimelineItem from "../../../../components/UIComponents/TimeLine/TimelineItem";
 
 function OrdersOverview() {
   return (

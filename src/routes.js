@@ -36,7 +36,9 @@ Coded by www.creative-tim.com
 */
 
 import React from "react";
-
+import HomeIcon from '@mui/icons-material/Home';
+import ImportExportIcon from '@mui/icons-material/ImportExport';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 // Material Dashboard 2 React layouts
 import Dashboard from "./layouts/dashboard";
 import Notifications from "./layouts/NotificationItem";
@@ -49,15 +51,15 @@ const definedRoutes = [
     type: "collapse",
     name: "Audience Dashboard",
     key: "AudienceDashboard",
-    icon: <Icon fontSize="small"></Icon>,
+    icon: <HomeIcon />,
     route: "/dashboard",
     component: <Dashboard />,
   },
   {
     type: "collapse",
-    name: "Import Audience Segemnt",
-    key: "ImportAudienceSegemnt",
-    icon: <Icon fontSize="small"></Icon>,
+    name: "Import Audience Segment",
+    key: "ImportAudienceSegment",
+    icon: <ImportExportIcon />,
     route: "/tables",
     component: null,
   },
@@ -65,7 +67,7 @@ const definedRoutes = [
     type: "collapse",
     name: "Notifications",
     key: "notifications",
-    icon: <Icon fontSize="small"></Icon>,
+    icon: <NotificationsActiveIcon />,
     route: "/notifications",
     component: null,
   }

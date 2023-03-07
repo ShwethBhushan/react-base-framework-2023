@@ -13,8 +13,9 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React,{ useState, useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
+import Person2Icon from '@mui/icons-material/Person2';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 // react-router components
 import { useLocation, Link } from "react-router-dom";
 
@@ -136,15 +137,15 @@ function DashboardNavbar({ absolute, light, isMini }) {
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
             <MDBox pr={1}>
-             
+
             </MDBox>
             <MDBox color={light ? "white" : "inherit"}>
-              <Link to="/authentication/sign-in/basic">
-                <IconButton sx={navbarIconButton} size="small" disableRipple>
-                  <Icon sx={iconsStyle}>account_circle</Icon>
+              <Link to="/">
+                <IconButton sx={navbarIconButton} size="medium" disableRipple>
+                  <Person2Icon />
                 </IconButton>
               </Link>
-              <IconButton
+              {/* <IconButton
                 size="small"
                 disableRipple
                 color="inherit"
@@ -163,18 +164,18 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 onClick={handleConfiguratorOpen}
               >
                 <Icon sx={iconsStyle}>settings</Icon>
-              </IconButton>
+              </IconButton> */}
               <IconButton
-                size="small"
+                size="medium"
                 disableRipple
                 color="inherit"
                 sx={navbarIconButton}
                 aria-controls="notification-menu"
                 aria-haspopup="true"
                 variant="contained"
-                onClick={handleOpenMenu}
+              // onClick={handleOpenMenu}
               >
-                <Icon sx={iconsStyle}>notifications</Icon>
+                <NotificationsIcon />
               </IconButton>
               {renderMenu()}
             </MDBox>

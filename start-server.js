@@ -26,7 +26,12 @@ app.set('view engine', 'ejs')
 app.get('', (req, res) => {
     res.render('index', { title: 'Home Page'})
 })
-
+app.get('/dashboard', (req, res) => {
+  res.render('index', { title: 'Home Page' })
+})
+app.get('/tables', (req, res) => {
+  res.render('index', { title: 'Import Audience Segment' })
+})
 app.get('/about', (req, res) => {
     res.render('about', { title: 'About Page' })
 })
