@@ -38,6 +38,7 @@ import StaticTable from "../../components/UIComponents/Tables/StaticTable";
 // Dashboard components
 // import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "../../layouts/dashboard/components/OrdersOverview";
+import TaxonomyGrid from "../../components/Features/Datagrid/TaxonomyGrid";
 
 function Dashboard() {
   // const { sales, tasks } = reportsLineChartData;
@@ -108,7 +109,7 @@ function Dashboard() {
           </Grid>
         </Grid>
       </MDBox>
-      <OrdersOverview />
+      <TaxonomyGrid />
       <Footer />
     </DashboardLayout>
   );
