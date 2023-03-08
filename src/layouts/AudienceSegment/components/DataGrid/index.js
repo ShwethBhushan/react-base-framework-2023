@@ -36,7 +36,7 @@ const ImportDataGrid = ({rows, columns}) => {
                     bottom: params.isLastVisible ? 0 : 5,
                   })}
                   sx={{
-                    fontSize: '11px',
+                    fontSize: '16px',
                   }}
                 />
               </div>

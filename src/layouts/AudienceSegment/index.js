@@ -1,7 +1,6 @@
 import React from "react";
 import DashboardLayout from "../DashboardLayout";
 import DashboardNavbar from "../Navbars/DashboardNavbar";
-import Footer from "../Footer";
 import MDBox from "../../genericComponents/MDBox";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -31,10 +30,10 @@ const AudienceSegment = () => {
                                 coloredShadow="info"
                             >
                                 <MDTypography variant="h6" color="white">
-                                    Audience Segment
+                                    Taxonomy Management
                                 </MDTypography>
                             </MDBox>
-                            <MDBox pt={3}>
+                            <MDBox pt={2}>
                                 {/* <HorizontalStepper /> */}
                                 <HorizontalStepper2 />
                             </MDBox>
@@ -42,7 +41,6 @@ const AudienceSegment = () => {
                     </Grid>
                 </Grid>
             </MDBox>
-            <Footer />
         </DashboardLayout>
     )
 }

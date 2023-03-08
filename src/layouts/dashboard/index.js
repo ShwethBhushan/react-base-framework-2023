@@ -81,7 +81,7 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 icon="leaderboard"
-                title="No of Audience Segments in Current Taxonomy"
+                title="Audience Segments# - Current Taxonomy"
                 count="2780"
                 percentage={{
                   color: "success",

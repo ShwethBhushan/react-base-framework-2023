@@ -70,12 +70,12 @@ const HorizontalStepper2 = () => {
       isDone: false,
       component: <ThirdComponent key={'thirdStep'} />,
     },
-    {
-      key: 'finalStep',
-      label: 'Summary',
-      isDone: false,
-      component: <FinalComponent key={'finalStep'} />,
-    },
+    // {
+    //   key: 'finalStep',
+    //   label: 'Summary',
+    //   isDone: false,
+    //   component: <FinalComponent key={'finalStep'} />,
+    // },
   ]);
   const [activeStep, setActiveStep] = useState(steps[0]);
 
@@ -120,8 +120,6 @@ const HorizontalStepper2 = () => {
                 }`}
               >
                 <div>
-                  Step {i + 1}
-                  <br />
                   <span>{step.label}</span>
                 </div>
               </li>

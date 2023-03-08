@@ -43,7 +43,7 @@ export default function TaxonomyGrid() {
             id: 1,
             systemId: 111,
             taxonomyId: 11111,
-            onBoarderId: "test1",
+            onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test1",
             subGroup: "test1",
             description: "test1",
@@ -59,7 +59,7 @@ export default function TaxonomyGrid() {
             id: 12,
             systemId: 222,
             taxonomyId: 22222,
-            onBoarderId: "test2",
+            onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test2",
             subGroup: "test2",
             description: "test2",
@@ -68,14 +68,14 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test2",
             daLineItem: "test2",
             daLineItemName: "test2",
-            createdBy: "Barbara",
+            createdBy: "John",
             ReviewedBy: "Hale Steve"
         },
         {
             id: 3,
             systemId: 333,
             taxonomyId: 33333,
-            onBoarderId: "test3",
+            onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test3",
             subGroup: "test3",
             description: "test3",
@@ -84,14 +84,14 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test3",
             daLineItem: "test3",
             daLineItemName: "test3",
-            createdBy: "Barbara",
+            createdBy: "Michael",
             ReviewedBy: "Hale Steve"
         },
         {
             id: 4,
             systemId: 444,
             taxonomyId: 44444,
-            onBoarderId: "test4",
+            onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test4",
             subGroup: "test4",
             description: "test4",
@@ -107,7 +107,7 @@ export default function TaxonomyGrid() {
             id: 5,
             systemId: 555,
             taxonomyId: 55555,
-            onBoarderId: "test5",
+            onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test5",
             subGroup: "test5",
             description: "test5",
@@ -116,7 +116,7 @@ export default function TaxonomyGrid() {
             taxonomyPath: "test5",
             daLineItem: "test5",
             daLineItemName: "test5",
-            createdBy: "Barbara",
+            createdBy: "John",
             ReviewedBy: "Hale Steve"
         },
     ];
@@ -130,25 +130,31 @@ export default function TaxonomyGrid() {
         {
             field: "taxonomyId",
             renderHeader: () => <span className="headername">{"Status "}</span>,
-            width: 120,
+            width: 130,
             editable: true,
         },
         {
             field: "onBoarderId",
             renderHeader: () => <span className="headername">{"Completed Date Time"}</span>,
-            width: 120,
+            width: 200,
             editable: true,
         },
         {
             field: "createdBy",
             renderHeader: () => <span className="headername">{"Created By"}</span>,
-            width: 120,
+            width: 200,
             editable: true,
         },
         {
             field: "ReviewedBy",
             renderHeader: () => <span className="headername">{"Reviewer"}</span>,
-            width: 120,
+            width: 200,
+            editable: true,
+        },
+        {
+            field: "actions",
+            renderHeader: () => <span className="headername">{"Actions"}</span>,
+            width: 200,
             editable: true,
         }
     ];
@@ -197,7 +203,7 @@ export default function TaxonomyGrid() {
                                             bottom: params.isLastVisible ? 0 : 5,
                                         })}
                                         sx={{
-                                            fontSize: "11px"
+                                            fontSize: "16px"
                                         }}
 
                                     /></div>

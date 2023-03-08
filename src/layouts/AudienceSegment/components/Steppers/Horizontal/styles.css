@@ -1,5 +1,5 @@
 .box .steps {
-  border-bottom: 1px solid #ddd;
+  width: 100%;
 }
 .box .steps ul {
   overflow: hidden;

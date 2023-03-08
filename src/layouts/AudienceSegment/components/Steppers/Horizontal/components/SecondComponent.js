@@ -139,15 +139,15 @@ const rows = [
   },
 ];
 const columns = [
-  {field: 'col1', headerName: 'System ID', width: 80},
-  {field: 'col2', headerName: 'Onboarder Id', width: 80},
-  {field: 'col3', headerName: 'Taxonomy Id', width: 100},
-  {field: 'col4', headerName: 'Taxonomy Name', width: 200},
-  {field: 'col5', headerName: 'Sub Group', width: 70},
-  {field: 'col6', headerName: 'Description', width: 160},
-  {field: 'col7', headerName: 'Royalty', width: 70},
-  {field: 'col8', headerName: 'DPCM', width: 70},
-  {field: 'col9', headerName: 'Taxonomy Path', width: 160},
+  {field: 'col1', headerName: 'System ID', width: 120},
+  {field: 'col2', headerName: 'Onboarder Id', width: 120},
+  {field: 'col3', headerName: 'Taxonomy Id', width: 120},
+  {field: 'col4', headerName: 'Taxonomy Name', width: 300},
+  {field: 'col5', headerName: 'Sub Group', width: 120, editable: false},
+  {field: 'col6', headerName: 'Description', width: 220, editable: false},
+  {field: 'col7', headerName: 'Royalty', width: 140, editable: false},
+  {field: 'col8', headerName: 'DPCM', width: 140, editable: false},
+  {field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: false},
   {
     headerName: 'Actions',
     width: 160,
@@ -174,11 +174,11 @@ const SecondComponent = () => {
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
         <MDBox>
           <MDTypography variant="h4" gutterBottom>
-            Create Base Taxonomy
+            
           </MDTypography>
           <MDBox display="flex" alignItems="center" lineHeight={0}>
             <MDTypography variant="button" fontWeight="regular" color="text">
-              &nbsp;<strong>30 done</strong> this month
+              
             </MDTypography>
           </MDBox>
         </MDBox>

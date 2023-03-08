@@ -30,10 +30,10 @@ app.get('/dashboard', (req, res) => {
   res.render('index', { title: 'ACT-DM' })
 })
 app.get('/taxonomy-management', (req, res) => {
-  res.render('index', { title: 'ITaxonomy Management' })
+  res.render('index', { title: 'ACT-DM' })
 })
 app.get('/about', (req, res) => {
-  res.render('about', { title: 'About Page' })
+  res.render('about', { title: 'ACT-DM' })
 })
 
 /*
