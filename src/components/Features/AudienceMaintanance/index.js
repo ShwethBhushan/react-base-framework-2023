@@ -79,7 +79,7 @@ const AudienceMaitanance = props => {
                     coloredShadow="info"
                 >
                     <MDTypography variant="h6" color="white">
-                    Audience Maitanance
+                    Audience Segment Maitanance
                     </MDTypography>
                 </MDBox>
                 <MDBox pt={3}>
@@ -138,6 +138,7 @@ const AudienceMaitanance = props => {
 
                                 <MDInput type="text" label="DPCM" value="1.66" />
                                 <MDInput type="text" label="Taxonomy Path" value="Folder1>Folder2<Folder3" />
+                                <MDInput type="text" label="Change Notes*" value="" />
                                
                         </div>
                         <div className='main-buttons-div justify-content-center'>
