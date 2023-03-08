@@ -29,8 +29,7 @@ import Icon from "@mui/material/Icon";
 // Material Dashboard 2 React components
 import MDBox from "../../../../genericComponents/MDBox";
 import MDTypography from "../../../../genericComponents/MDTypography";
-
-// ReportsLineChart configurations
+import HistoryIcon from '@mui/icons-material/History';// ReportsLineChart configurations
 import configs from "../ReportsLineChart/configs";
 
 function ReportsLineChart({ color, title, description, date, chart }) {
@@ -66,7 +65,7 @@ function ReportsLineChart({ color, title, description, date, chart }) {
           <Divider />
           <MDBox display="flex" alignItems="center">
             <MDTypography variant="button" color="text" lineHeight={1} sx={{ mt: 0.15, mr: 0.5 }}>
-              <Icon>schedule</Icon>
+              <HistoryIcon/>
             </MDTypography>
             <MDTypography variant="button" color="text" fontWeight="light">
               {date}

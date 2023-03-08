@@ -136,8 +136,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
         </MDBox>
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <MDBox pr={1}>
-
+            <MDBox pr={70}>
+            {/* AUDIENCE CREATION - DIGITAL MASTER MANAGEMENT SYSTEM */}
             </MDBox>
             <MDBox color={light ? "white" : "inherit"}>
               <Link to="/">

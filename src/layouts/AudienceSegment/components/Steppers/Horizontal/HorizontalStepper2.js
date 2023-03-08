@@ -1,5 +1,6 @@
 import { Stack } from '@mui/system';
 import React, { useState } from 'react';
+import TaxonomyGrid from '../../../../../components/Features/Datagrid/TaxonomyGrid';
 import MDButton from '../../../../../genericComponents/MDButton';
 import VerticleStepper from '../Verticle';
 import './styles.css';
@@ -22,18 +23,19 @@ const labelArrayStep2 = [
 const firstComponent = () => {
     return (
         <Stack sx={{ width: '100%' }}>
-            <VerticleStepper key='first' labelArray={labelArrayStep1} initialStep={1} />
+            <TaxonomyGrid/>
+            {/* <VerticleStepper key='first' labelArray={labelArrayStep1} initialStep={1} /> */}
         </Stack>
     );
 };
 const secondComponent = () => {
     return <Stack sx={{ width: '100%' }}>
-        <VerticleStepper key='second' labelArray={labelArrayStep2} initialStep={1} />
+        <TaxonomyGrid/>
     </Stack>;
 };
 const thirdComponent = () => {
     return <Stack sx={{ width: '100%' }}>
-        <VerticleStepper key='third' labelArray={labelArrayStep3} initialStep={1} />
+        <TaxonomyGrid/>
     </Stack>;
 };
 const finalComponent = () => {

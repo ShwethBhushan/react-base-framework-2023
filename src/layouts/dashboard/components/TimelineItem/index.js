@@ -17,6 +17,7 @@ Coded by www.creative-tim.com
 import React from "react";
 import PropTypes from "prop-types";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import DoneIcon from '@mui/icons-material/Done';
 // @mui material components
 import Icon from "@mui/material/Icon";
 
@@ -50,7 +51,7 @@ function TimelineItem({ color, icon, title, dateTime, description, lastItem }) {
         zIndex={2}
         sx={{ fontSize: ({ typography: { size } }) => size.sm }}
       >
-        <ArrowUpwardIcon/>
+        <DoneIcon/>
       </MDBox>
       <MDBox ml={5.75} pt={description ? 0.7 : 0.5} lineHeight={0} maxWidth="30rem">
         <MDTypography variant="button" fontWeight="medium" color={isDark ? "white" : "dark"}>

@@ -24,13 +24,13 @@ app.set('view engine', 'ejs')
 
 // Routes
 app.get('', (req, res) => {
-  res.render('index', { title: 'Home Page' })
+  res.render('index', { title: 'ACT-DM' })
 })
 app.get('/dashboard', (req, res) => {
-  res.render('index', { title: 'Home Page' })
+  res.render('index', { title: 'ACT-DM' })
 })
-app.get('/audience-segment', (req, res) => {
-  res.render('index', { title: 'Import Audience Segment' })
+app.get('/taxonomy-management', (req, res) => {
+  res.render('index', { title: 'ITaxonomy Management' })
 })
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About Page' })

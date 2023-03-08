@@ -51,12 +51,28 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="Bookings"
-                count={281}
+                title="Taxonomy Version"
+                count={52}
                 percentage={{
                   color: "success",
-                  amount: "+55%",
-                  label: "than lask week",
+                  amount: "Created",
+                  label: "5 days ago",
+                }}
+              />
+            </MDBox>
+          </Grid>
+          
+          <Grid item xs={12} md={6} lg={3}>
+            <MDBox mb={1.5}>
+              <ComplexStatisticsCard
+                color="success"
+                icon="store"
+                title="Taxonomy Status"
+                count="Next Active"
+                percentage={{
+                  color: "success",
+                  amount: "Submitted for Review ",
+                  label: "2 days ago",
                 }}
               />
             </MDBox>
@@ -65,27 +81,12 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 icon="leaderboard"
-                title="Today's Users"
-                count="2,300"
+                title="No of Audience Segments in Current Taxonomy"
+                count="2780"
                 percentage={{
                   color: "success",
-                  amount: "+3%",
-                  label: "than last month",
-                }}
-              />
-            </MDBox>
-          </Grid>
-          <Grid item xs={12} md={6} lg={3}>
-            <MDBox mb={1.5}>
-              <ComplexStatisticsCard
-                color="success"
-                icon="store"
-                title="Revenue"
-                count="34k"
-                percentage={{
-                  color: "success",
-                  amount: "+1%",
-                  label: "than yesterday",
+                  amount: "+ 120",
+                  label: "new in current taxonomy",
                 }}
               />
             </MDBox>
@@ -95,12 +96,12 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="primary"
                 icon="person_add"
-                title="Followers"
-                count="+91"
+                title="Number of Archieved Taxonomies"
+                count="50"
                 percentage={{
                   color: "success",
-                  amount: "",
-                  label: "Just updated",
+                  amount: "+2",
+                  label: "archieved last month",
                 }}
               />
             </MDBox>
@@ -112,9 +113,9 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsBarChart
                   color="info"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
+                  title="Taxonomies Per Month"
+                  description="1 Taxonomy Created in a Month"
+                  date="In Progress taxonomy created 5 days ago."
                   chart={reportsBarChartData}
                 />
               </MDBox>
@@ -123,13 +124,13 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="success"
-                  title="daily sales"
+                  title="New Audiences"
                   description={
                     <>
-                      (<strong>+15%</strong>) increase in today sales.
+                      <strong>60</strong> New Audiences added in Current Taxonomy.
                     </>
                   }
-                  date="updated 4 min ago"
+                  date="New Audiences Imported 2 days ago"
                   chart={sales}
                 />
               </MDBox>
@@ -138,9 +139,9 @@ function Dashboard() {
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="dark"
-                  title="completed tasks"
-                  description="Last Campaign Performance"
-                  date="just updated"
+                  title="Audience Segments"
+                  description="2780 total Audience Segments"
+                  date="Last Approved Taxonomy was 25 days ago."
                   chart={tasks}
                 />
               </MDBox>
