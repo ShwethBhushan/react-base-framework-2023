@@ -46,6 +46,7 @@ import Notifications from "./layouts/NotificationItem";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
+import AudienceSegment from "./layouts/AudienceSegment";
 
 const definedRoutes = [
   {
@@ -61,8 +62,8 @@ const definedRoutes = [
     name: "Import Audience Segment",
     key: "ImportAudienceSegment",
     icon: <ImportExportIcon />,
-    route: "/tables",
-    component: <Tables />,
+    route: "/audience-segment",
+    component: <AudienceSegment />,
   },
   {
     type: "collapse",

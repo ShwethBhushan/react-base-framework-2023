@@ -154,51 +154,59 @@ export default function TaxonomyGrid() {
     ];
     const theme = createTheme({
         typography: {
-          allVariants: {
-            fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
-            textTransform: 'none',
-            fontSize: 18,
-            fontWeight: 300
-          },
+            allVariants: {
+                fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
+                textTransform: 'none',
+                fontSize: 18,
+                fontWeight: 300
+            },
         },
-      });
+    });
     const [pageSize, setPageSize] = useState(5);
     const [rowId, setRowId] = useState(null);
     return (
         <ThemeProvider theme={theme}>
 
-        <MDBox pt={2} pb={3}>
-            <Grid container spacing={6}>
-                <Grid item xs={12}>
-                    <Card>
-                        
-                        <MDBox pt={3}>
-                            <div style={{ height: 450}}>
-                                <DataGrid
-                                    rows={rowsData}
-                                    columns={columnsGrid}
-                                    getRowId={(row) => row.id}
-                                    rowsPerPageOptions={[5, 10, 20]}
-                                    pageSize={pageSize}
-                                    onPageSizeChange={(newPageSize) =>
-                                        setPageSize(newPageSize)
-                                    }
-                                    onCellEditCommit={(params) => setRowId(params.id)}
-                                    getRowSpacing={(params) => ({
-                                        top: params.isFirstVisible ? 0 : 5,
-                                        bottom: params.isLastVisible ? 0 : 5,
-                                    })}
-                                    sx={{
-                                        fontSize: "11px"
-                                    }}
+            <MDBox pt={2} pb={3}>
+                <Grid container spacing={6}>
+                    <Grid item xs={12}>
+                        <Card>
+                            <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
+                                <MDBox>
+                                    <MDTypography variant="h6" fontWeight="medium">
+                                        Taxonomy Details
+                                    </MDTypography>
 
-                                /></div>
+                                </MDBox>
 
-                        </MDBox>
-                    </Card>
+                            </MDBox>
+                            <MDBox>
+                                <div style={{ height: 450 }}>
+                                    <DataGrid
+                                        rows={rowsData}
+                                        columns={columnsGrid}
+                                        getRowId={(row) => row.id}
+                                        rowsPerPageOptions={[5, 10, 20]}
+                                        pageSize={pageSize}
+                                        onPageSizeChange={(newPageSize) =>
+                                            setPageSize(newPageSize)
+                                        }
+                                        onCellEditCommit={(params) => setRowId(params.id)}
+                                        getRowSpacing={(params) => ({
+                                            top: params.isFirstVisible ? 0 : 5,
+                                            bottom: params.isLastVisible ? 0 : 5,
+                                        })}
+                                        sx={{
+                                            fontSize: "11px"
+                                        }}
+
+                                    /></div>
+
+                            </MDBox>
+                        </Card>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </MDBox>
+            </MDBox>
         </ThemeProvider>
     );
 }

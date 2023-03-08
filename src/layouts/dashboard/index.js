@@ -39,7 +39,7 @@ import TaxonomyGrid from "../../components/Features/Datagrid/TaxonomyGrid";
 import OrdersOverview from "./components/OrdersOverview";
 
 function Dashboard() {
-   const { sales, tasks } = reportsLineChartData;
+  const { sales, tasks } = reportsLineChartData;
 
   return (
     <DashboardLayout>
@@ -145,12 +145,12 @@ function Dashboard() {
                 />
               </MDBox>
             </Grid>
-            </Grid>
+          </Grid>
         </MDBox>
         <MDBox>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6} lg={8}>   
-             Taxonomy Details:           
+            <Grid item xs={12} md={6} lg={8}>
+
               <TaxonomyGrid />
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
