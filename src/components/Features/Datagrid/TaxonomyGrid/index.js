@@ -4,12 +4,14 @@ import { DataGrid, GridRowsProp, GridColDef } from '@mui/x-data-grid';
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
-
+import Button from '@mui/material/Button';
 // Material Dashboard 2 React components
 import MDBox from "../../../../genericComponents/MDBox";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import MDTypography from "../../../../genericComponents/MDTypography";
 import TaxonomyGridAction from './TaxonomyGridAction';
+import AddIcon from '@mui/icons-material/Add';
+import { Link } from 'react-router-dom';
 const rows = [
     { id: 1, col1: '11716', col2: 'P11717_G', col3: '1171800', col4: 'BaseTest', col5: 'G', col6: 'MockDesc', col7: 'Y', col8: '1.66', col9: 'Folder1>Folder2<Folder3', col10: '' },
     { id: 2, col1: '11716', col2: 'P11717_G', col3: '1171800', col4: 'BaseTest', col5: 'G', col6: 'MockDesc', col7: 'Y', col8: '1.66', col9: 'Folder1>Folder2<Folder3', col10: '' },
@@ -41,8 +43,8 @@ export default function TaxonomyGrid() {
     const rowsData = [
         {
             id: 1,
-            systemId: 111,
-            taxonomyId: 11111,
+            systemId: 51,
+            taxonomyId: 'Current Active',
             onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test1",
             subGroup: "test1",
@@ -57,8 +59,8 @@ export default function TaxonomyGrid() {
         },
         {
             id: 12,
-            systemId: 222,
-            taxonomyId: 22222,
+            systemId: 50,
+            taxonomyId: 'Prior',
             onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test2",
             subGroup: "test2",
@@ -73,8 +75,8 @@ export default function TaxonomyGrid() {
         },
         {
             id: 3,
-            systemId: 333,
-            taxonomyId: 33333,
+            systemId: 49,
+            taxonomyId: 'Archieved',
             onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test3",
             subGroup: "test3",
@@ -89,8 +91,8 @@ export default function TaxonomyGrid() {
         },
         {
             id: 4,
-            systemId: 444,
-            taxonomyId: 44444,
+            systemId: 48,
+            taxonomyId: 'Archieved',
             onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test4",
             subGroup: "test4",
@@ -105,8 +107,8 @@ export default function TaxonomyGrid() {
         },
         {
             id: 5,
-            systemId: 555,
-            taxonomyId: 55555,
+            systemId: 47,
+            taxonomyId: 'Archieved',
             onBoarderId: "23/02/2023 08:00 PM",
             taxonomyName: "test5",
             subGroup: "test5",
@@ -181,8 +183,9 @@ export default function TaxonomyGrid() {
                                 <MDBox>
                                     <MDTypography variant="h6" fontWeight="medium">
                                         Taxonomy Details
+                                        
+                                        <Button style={{marginLeft: 700}} variant="contained" component={Link} to="/taxonomy-management" endIcon={<AddIcon />}>Create New Taxonomy</Button>
                                     </MDTypography>
-
                                 </MDBox>
 
                             </MDBox>
