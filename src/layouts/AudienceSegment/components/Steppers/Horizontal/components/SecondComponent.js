@@ -1,5 +1,15 @@
 import {UploadFile} from '@mui/icons-material';
-import {Button, Typography} from '@mui/material';
+import {
+  Button,
+  Dialog,
+  Modal,
+  Typography,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  OutlinedInput,
+} from '@mui/material';
 import {Stack} from '@mui/system';
 import React, {useState} from 'react';
 import MDBox from '../../../../../../genericComponents/MDBox';
@@ -138,6 +148,15 @@ const rows = [
     col10: '',
   },
 ];
+
+const ITEM_HEIGHT = 60;
+const ITEM_PADDING_TOP = 12;
+const MenuProps = {
+  PaperProps: {style: {maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP, width: 250}},
+};
+const versionNumbersData = ['Version#52', 'Version#51', 'Version#50'];
+const taxonomyStatusData = ['Next Active', 'Current Active', 'Prior', 'Achieve'];
+
 const columns = [
   {field: 'col1', headerName: 'System ID', width: 120},
   {field: 'col2', headerName: 'Onboarder Id', width: 120},
@@ -155,53 +174,65 @@ const columns = [
   },
 ];
 const SecondComponent = () => {
-  const [fileError, setfileError] = useState(false);
-  const [selectedFile, setselectedFile] = useState();
-  const handleFileUpload = event => {
-    event.preventDefault();
-    const {files} = event.target;
-
-    if (!files) return;
-    if (new RegExp('image/*').test(files[0].type)) {
-      setselectedFile(files[0].name);
-      setfileError(false);
-    } else {
-      setfileError(true);
-    }
+  const [versionNumber, setVersionNumber] = useState('');
+  const [taxonomyStatus, setTaxonomyStatus] = useState('');
+  const handleChange = event => {
+    setVersionNumber(event.target.value);
+  };
+  const handleChangeTaxonomy = event => {
+    console.log('event', event);
+    setTaxonomyStatus(event.target.value);
   };
   return (
     <Stack>
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-        <MDBox>
-          <MDTypography variant="h4" gutterBottom>
-            
-          </MDTypography>
-          <MDBox display="flex" alignItems="center" lineHeight={0}>
-            <MDTypography variant="button" fontWeight="regular" color="text">
-              
-            </MDTypography>
-          </MDBox>
-        </MDBox>
-        <MDBox color="text" px={2}>
-          <Stack direction="column" spacing={2}>
-            <Button startIcon={<UploadFile color="info" />} variant="outlined" component="label">
-              <Typography variant="h6" color={'white'}>
-                Upload File
-              </Typography>
-              <input onChange={handleFileUpload} hidden accept=" .xls, .xlsx, .csv" type="file" />
-            </Button>
-            {selectedFile && (
-              <Typography variant="caption" color={'black'}>
-                File: {selectedFile}
-              </Typography>
-            )}
-          </Stack>
-          {fileError && (
-            <Typography variant="caption" color={'red'}>
-              Please Upload Excel File
-            </Typography>
-          )}
-        </MDBox>
+        {' '}
+        <Stack direction={'row'} spacing={3}>
+          {' '}
+          <MDBox>
+            {' '}
+            <FormControl sx={{width: 200}}>
+              <InputLabel id="demo-multiple-name-label">Version Number</InputLabel>{' '}
+              <Select
+                labelId="demo-multiple-name-label"
+                id="demo-multiple-name"
+                value={versionNumber}
+                onChange={handleChange}
+                input={<OutlinedInput label="Name" />}
+                MenuProps={MenuProps}
+                style={{padding: 12}}
+              >
+                {versionNumbersData.map(item => (
+                  <MenuItem key={item} value={item}>
+                    {item}{' '}
+                  </MenuItem>
+                ))}{' '}
+              </Select>{' '}
+            </FormControl>{' '}
+          </MDBox>{' '}
+          <MDBox>
+            {' '}
+            <FormControl sx={{width: 200}}>
+              <InputLabel id="taxonomyStatus-label">Taxonomy Status</InputLabel>{' '}
+              <Select
+                labelId="taxonomyStatus-label"
+                id="taxonomyStatus"
+                value={taxonomyStatus}
+                onChange={handleChangeTaxonomy}
+                input={<OutlinedInput label="Name" />}
+                MenuProps={MenuProps}
+                style={{padding: 12}}
+              >
+                {' '}
+                {taxonomyStatusData.map(item => (
+                  <MenuItem key={item} value={item}>
+                    {item}{' '}
+                  </MenuItem>
+                ))}{' '}
+              </Select>{' '}
+            </FormControl>{' '}
+          </MDBox>{' '}
+        </Stack>{' '}
       </MDBox>
       <MDBox>
         <ImportDataGrid rows={rows} columns={columns} />
