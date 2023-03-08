@@ -93,14 +93,6 @@ const definedRoutes = [
     icon: <SettingsIcon />,
     route: "/settings",
     component: null,
-  },
-  {
-    type: "collapse",
-    name: "Audience Maitanance",
-    key: "AudienceMaitanance",
-    icon: <EngineeringIcon />,
-    route: "/audienceMaintanance",
-    component: <AudienceMaitanance/>,
   }
 ];
 
