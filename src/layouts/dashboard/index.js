@@ -51,7 +51,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="Taxonomy Version"
+                title="In Progress Taxonomy Version"
                 count={52}
                 percentage={{
                   color: "success",
@@ -81,11 +81,11 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 icon="leaderboard"
-                title="Audience Segments# - Current Taxonomy"
+                title="No of Audience Segments in Current Taxonomy"
                 count="2780"
                 percentage={{
                   color: "success",
-                  amount: "+ 120",
+                  amount: "+ 120 Audience Segments",
                   label: "new in current taxonomy",
                 }}
               />
@@ -97,7 +97,7 @@ function Dashboard() {
                 color="primary"
                 icon="person_add"
                 title="Number of Archieved Taxonomies"
-                count="50"
+                count="49"
                 percentage={{
                   color: "success",
                   amount: "+2",
@@ -127,10 +127,10 @@ function Dashboard() {
                   title="New Audiences"
                   description={
                     <>
-                      <strong>60</strong> New Audiences added in Current Taxonomy.
+                      No of new Audiences added in each Taxonomy Version.
                     </>
                   }
-                  date="New Audiences Imported 2 days ago"
+                  date="20 new Audiences added in Next Active taxonomy 2 days ago."
                   chart={sales}
                 />
               </MDBox>
@@ -140,8 +140,8 @@ function Dashboard() {
                 <ReportsLineChart
                   color="dark"
                   title="Audience Segments"
-                  description="2780 total Audience Segments"
-                  date="Last Approved Taxonomy was 25 days ago."
+                  description="Number of Audience Segments added in each Taxonomy versions"
+                  date="2780 total Audience Segments"
                   chart={tasks}
                 />
               </MDBox>
