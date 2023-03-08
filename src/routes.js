@@ -39,6 +39,7 @@ import React from "react";
 import HomeIcon from '@mui/icons-material/Home';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import EngineeringIcon from '@mui/icons-material/Engineering';
 // Material Dashboard 2 React layouts
 import Dashboard from "./layouts/dashboard";
 import Tables from "./containers/tables"
@@ -47,6 +48,7 @@ import Notifications from "./layouts/NotificationItem";
 // @mui icons
 import Icon from "@mui/material/Icon";
 import AudienceSegment from "./layouts/AudienceSegment";
+import AudienceMaitanance from "./components/Features/AudienceMaintanance";
 
 const definedRoutes = [
   {
@@ -72,6 +74,14 @@ const definedRoutes = [
     icon: <NotificationsActiveIcon />,
     route: "/notifications",
     component: null,
+  },
+  {
+    type: "collapse",
+    name: "Audience Maitanance",
+    key: "AudienceMaitanance",
+    icon: <EngineeringIcon />,
+    route: "/audienceMaintanance",
+    component: <AudienceMaitanance/>,
   }
 ];
 

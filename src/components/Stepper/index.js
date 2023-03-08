@@ -20,7 +20,6 @@ export default function HorizontalNonLinearStepper() {
   const [completed, setCompleted] = React.useState({});
 
   function getStepContent(step) {
-    debugger;
     switch (step) {
         case 0:   
         const rows = [

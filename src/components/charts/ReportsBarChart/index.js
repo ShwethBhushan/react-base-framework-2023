@@ -33,7 +33,6 @@ import MDTypography from "../../../genericComponents/MDTypography";
 import configs from "../ReportsBarChart/configs";
 
 function ReportsBarChart({ color, title, description, date, chart }) {
-  debugger;
    const { data, options } = configs(chart.labels || [], chart.datasets || {});
 
   return (

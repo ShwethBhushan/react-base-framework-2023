@@ -31,6 +31,7 @@ const columns = [
     { field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: true },
     { field: 'col10', headerName: 'Actions', width: 100 },
 ];
+
 export default function TaxonomyMainGrid() {
     const rowsData = [
         {
@@ -105,9 +106,11 @@ export default function TaxonomyMainGrid() {
         },
     ];
     const handleView = (params) => {
+    debugger;
         console.log("Viewing ", params?.row?._id, params);
     };
     const handleEdit = (params) => {
+    alert("Edit")
         console.log("Editing ", params?.row?._id, params);
     };
     const handleDelete = (params) => {
@@ -189,11 +192,13 @@ export default function TaxonomyMainGrid() {
             type: "actions",
             renderCell: (params) => (
                 <>
-                    <TaxonomyGridAction {...{ params, rowId }} />
+                    <TaxonomyGridAction {...{ params, rowId,handleEdit }} />
                 </>
             ),
         },
     ];
+
+  
     const [pageSize, setPageSize] = useState(5);
     const [rowId, setRowId] = useState(null);
     return (

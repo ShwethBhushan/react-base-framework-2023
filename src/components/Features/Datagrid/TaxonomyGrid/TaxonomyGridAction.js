@@ -5,25 +5,27 @@ import { green } from "@mui/material/colors";
 import React from "react";
 
 
-const TaxonomyGridAction = ({ params, rowId }) => {
+const TaxonomyGridAction = ({ params, rowId,handleEdit  }) => {
     const [loading, setLoading] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    const handleSubmit = async () => {
-        setLoading(true);
+    // const handleEdit = async () => {
+    //     debugger;
+    //     // setLoading(true);
 
-        const { role, active, id } = params.row;
-        // const result = await updateStatus({ role, active }, _id, dispatch);
-        // if (result) {
-        //   setSuccess(true);
-        //   setRowId(null);
-        // }
-        setTimeout(() => {
-            setLoading(false);
-        }, 1500);
+    //     const { role, active, id } = params.row;
+        
+    //     // setTimeout(() => {
+    //     //     setLoading(false);
+    //     // }, 1500);
+
+    // };
+    const handleView = () => { 
+        debugger;
     };
-    const handleView = () => { };
-    const handleDelete = () => { };
+    const handleDelete = () => { 
+        debugger;
+    };
     useEffect(() => {
         if (rowId === params.id && success) setSuccess(false);
     }, [rowId]);
@@ -74,7 +76,7 @@ const TaxonomyGridAction = ({ params, rowId }) => {
                             opacity: 0.8,
                         }}
                         disabled={params.id !== rowId || loading}
-                        onClick={handleSubmit}
+                        onClick={handleEdit}
                     >
                         <Save />
                     </Fab>

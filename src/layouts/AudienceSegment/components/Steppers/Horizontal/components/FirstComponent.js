@@ -1,11 +1,12 @@
 import {UploadFile} from '@mui/icons-material';
-import {Button, Typography} from '@mui/material';
+import {Button, Dialog, Modal, Typography} from '@mui/material';
 import {Stack} from '@mui/system';
 import React, {useState} from 'react';
 import MDBox from '../../../../../../genericComponents/MDBox';
 import MDTypography from '../../../../../../genericComponents/MDTypography';
 import ImportDataGrid from '../../../DataGrid';
 import ImportGridAction from '../../../DataGrid/gridAction';
+import AudienceMaitanance from '../../../../../../components/Features/AudienceMaintanance';
 const rows = [
   {
     id: 1,
@@ -138,24 +139,45 @@ const rows = [
     col10: '',
   },
 ];
-const columns = [
-  {field: 'col1', headerName: 'System ID', width: 80},
-  {field: 'col2', headerName: 'Onboarder Id', width: 80},
-  {field: 'col3', headerName: 'Taxonomy Id', width: 100},
-  {field: 'col4', headerName: 'Taxonomy Name', width: 200},
-  {field: 'col5', headerName: 'Sub Group', width: 70, editable: true},
-  {field: 'col6', headerName: 'Description', width: 160, editable: true},
-  {field: 'col7', headerName: 'Royalty', width: 70, editable: true},
-  {field: 'col8', headerName: 'DPCM', width: 70, editable: true},
-  {field: 'col9', headerName: 'Taxonomy Path', width: 160, editable: true},
-  {
-    headerName: 'Actions',
-    width: 160,
-    renderCell: () => <ImportGridAction type={'readwrite'} />,
-  },
-];
+
+
 
 const FirstComponent = () => {
+
+  const handleEdit=() => {
+    setIsEdit(!isEdit)
+  }
+  
+  const handleDelete=() => {
+    alert("Delete")
+  }
+  
+  const handleView=() => {
+    alert("View")
+  }
+
+  const columns = [
+    {field: 'col1', headerName: 'System ID', width: 80},
+    {field: 'col2', headerName: 'Onboarder Id', width: 80},
+    {field: 'col3', headerName: 'Taxonomy Id', width: 100},
+    {field: 'col4', headerName: 'Taxonomy Name', width: 200},
+    {field: 'col5', headerName: 'Sub Group', width: 70, editable: true},
+    {field: 'col6', headerName: 'Description', width: 160, editable: true},
+    {field: 'col7', headerName: 'Royalty', width: 70, editable: true},
+    {field: 'col8', headerName: 'DPCM', width: 70, editable: true},
+    {field: 'col9', headerName: 'Taxonomy Path', width: 160, editable: true},
+    {
+      headerName: 'Actions',
+      width: 160,
+      renderCell: () => <ImportGridAction type={'readwrite'} handleSubmit={handleEdit}  handleDelete={handleDelete} handleView={handleView}  />,
+    },
+  ];
+
+  const onCancel=()=>{
+    setIsEdit(false)
+  }
+
+  const [isEdit, setIsEdit] = useState(false);
   const [fileInfos, setFileInfo] = useState();
   const [fileError, setFileError] = useState(false);
   const handleFileUpload = event => {
@@ -208,6 +230,9 @@ const FirstComponent = () => {
       <MDBox>
         <ImportDataGrid rows={rows} columns={columns} />
       </MDBox>
+    <Modal open={isEdit}  >
+          <AudienceMaitanance onCancel={onCancel}/>
+    </Modal>
     </Stack>
   );
 };
