@@ -152,7 +152,7 @@ export default function App() {
           <>
             <Sidenav
               color={sidenavColor}
-              brand={(transparentSidenav && !darkMode) || whiteSidenav}
+              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
               brandName="Audience Creation Digital MS"
               routes={definedRoutes}
               onMouseEnter={handleOnMouseEnter}

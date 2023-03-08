@@ -167,7 +167,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
             sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
           >
             <MDTypography component="h6" variant="button" fontWeight="medium" color={textColor}>
-              <span style={{ fontSize: "21px" }}> Audience Creation</span> <br />Digital  Management System
+              <span style={{ fontSize: "21px" }}> Audience Creation</span> <br />Digital Master Management
             </MDTypography>
           </MDBox>
         </MDBox>

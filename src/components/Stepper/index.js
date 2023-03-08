@@ -8,11 +8,6 @@ import Typography from '@mui/material/Typography';
 import TaxonomyMainGrid from '../../containers/tables/data/TaxonomyMainGrid'
 import { DataGrid } from '@mui/x-data-grid';
 import SendIcon from '@mui/icons-material/Send';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import NativeSelect from '@mui/material/NativeSelect';
 const steps = ['Create Base Taxonomy', 'Review Base Taxonomy', 'Export', 'Summary'];
 
 export default function HorizontalNonLinearStepper() {
@@ -185,30 +180,8 @@ export default function HorizontalNonLinearStepper() {
                         ),
                     },
                 ];
-            const [taxonomyVersion, setTaxonomyVersion] = React.useState('');
-
-  const handleChange = (event) => {
-    setTaxonomyVersion(event.target.value);
-  };
             return (
                 <div>
-                    <FormControl variant="standard" sx={{ m: 1 }}>
-        <InputLabel id="demo-simple-select-standard-label">Taxonomy Version</InputLabel>
-        <NativeSelect
-          labelId="demo-simple-select-standard-label"
-          id="demo-simple-select-standard"
-          value={taxonomyVersion}
-          onChange={handleChange}
-          label="Taxonomy Version"
-        >
-          <option  value="">
-            None
-          </option >
-          <option  value={51}>Version#51</option >
-          <option  value={50}>Version#50</option >
-          <option  value={19}>Version#49</option >
-        </NativeSelect>
-      </FormControl>
                 <Box sx={{ height: 400, width: '100%', marginTop: 18, marginBottom: 6, '& .super-app-theme--header': {
                     backgroundColor: 'rgb(101, 159, 246)',
                   }, boxShadow: 2,
@@ -474,7 +447,7 @@ export default function HorizontalNonLinearStepper() {
                         editable: true,
                     },
                     {
-                            field: "ExportedDate",
+                        field: "ExportedDate",
                         renderHeader: () => <span className="headername">{"Exported Date"}</span>,
                         width: 120,
                         editable: true,

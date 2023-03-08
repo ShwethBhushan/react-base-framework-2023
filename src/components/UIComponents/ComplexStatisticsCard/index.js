@@ -7,7 +7,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 import Icon from "@mui/material/Icon";
-
+import SummarizeIcon from '@mui/icons-material/Summarize';
 // Material Dashboard 2 React components
 import MDBox from "../../../genericComponents/MDBox";
 import MDTypography from "../../../genericComponents/MDTypography";
@@ -29,9 +29,7 @@ function ComplexStatisticsCard({ color, title, count, percentage, icon }) {
                     height="4rem"
                     mt={-3}
                 >
-                    <Icon fontSize="medium" color="inherit">
-                        {icon}
-                    </Icon>
+                    <SummarizeIcon />
                 </MDBox>
                 <MDBox textAlign="right" lineHeight={1.25}>
                     <MDTypography variant="button" fontWeight="light" color="text">

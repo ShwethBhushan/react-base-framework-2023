@@ -1,6 +1,6 @@
 import {Button, Card, ListItem, Typography} from '@mui/material';
-import {Stack} from '@mui/system';
-import React, {useState} from 'react';
+import { Stack } from '@mui/system';
+import React, { useState } from 'react';
 import MDBox from '../../../../../genericComponents/MDBox';
 import MDButton from '../../../../../genericComponents/MDButton';
 import MDTypography from '../../../../../genericComponents/MDTypography';
@@ -9,11 +9,44 @@ import {FileCopy, UploadFile} from '@mui/icons-material';
 import './styles.css';
 import TaxonomyGrid from '../../../../../components/Features/Datagrid/TaxonomyGrid';
 import ImportDataGrid from '../../DataGrid';
+
 import FirstComponent from './components/FirstComponent';
 import SecondComponent from './components/SecondComponent';
 import ThirdComponent from './components/ThirdComponent';
 import FinalComponent from './components/FinalComponent';
-
+const labelArrayStep1 = [
+    'Update/Resume Taxonomy',
+    'Import New Audiences',
+    'Validations',
+    'Progress',
+    'Preview & Submit',
+];
+const labelArrayStep2 = [
+    'View Updated Taxonomy',
+    'View the Changes Only',
+    'Approve/Reject ',
+    'Preview ',
+]; const labelArrayStep3 = [
+    ' Push to destination',
+    'Preview ',
+];
+const firstComponent = () => {
+    return (
+        <Stack sx={{ width: '100%' }}>
+            <VerticleStepper key='first' labelArray={labelArrayStep1} initialStep={1} />
+        </Stack>
+    );
+};
+const secondComponent = () => {
+    return <Stack sx={{ width: '100%' }}>
+        <VerticleStepper key='second' labelArray={labelArrayStep2} initialStep={1} />
+    </Stack>;
+};
+const thirdComponent = () => {
+    return <Stack sx={{ width: '100%' }}>
+        <VerticleStepper key='third' labelArray={labelArrayStep3} initialStep={1} />
+    </Stack>;
+};
 const finalComponent = () => {
   return <div>Final Component</div>;
 };
@@ -37,12 +70,12 @@ const HorizontalStepper2 = () => {
       isDone: false,
       component: <ThirdComponent key={'thirdStep'} />,
     },
-    {
-      key: 'finalStep',
-      label: 'Summary',
-      isDone: false,
-      component: <FinalComponent key={'finalStep'} />,
-    },
+    // {
+    //   key: 'finalStep',
+    //   label: 'Summary',
+    //   isDone: false,
+    //   component: <FinalComponent key={'finalStep'} />,
+    // },
   ]);
   const [activeStep, setActiveStep] = useState(steps[0]);
 
@@ -87,8 +120,6 @@ const HorizontalStepper2 = () => {
                 }`}
               >
                 <div>
-                  Step {i + 1}
-                  <br />
                   <span>{step.label}</span>
                 </div>
               </li>

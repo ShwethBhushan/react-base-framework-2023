@@ -15,11 +15,11 @@ Coded by www.creative-tim.com
 
 export default {
   sales: {
-    labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: { label: "Mobile apps", data: [50, 40, 300, 320, 500, 350, 200, 230, 500] },
+    labels: ["V43", "V44", "V45", "V46", "V47", "V48", "V49", "V50", "V51"],
+    datasets: { label: "New Audiences", data: [50, 40, 80, 60, 30, 70, 80, 100, 90] },
   },
   tasks: {
-    labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    datasets: { label: "Desktop apps", data: [50, 40, 300, 220, 500, 250, 400, 230, 500] },
+    labels: ["V43", "V44", "V45", "V46", "V47", "V48", "V49", "V50", "V51"],
+    datasets: { label: "Total Audience Segments", data: [500, 600, 850, 1200, 1580, 1000, 1950, 2200, 2780] },
   },
 };

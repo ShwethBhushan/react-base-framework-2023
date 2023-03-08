@@ -17,6 +17,7 @@ Coded by www.creative-tim.com
 import React from "react";
 import Card from "@mui/material/Card";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import NoteIcon from '@mui/icons-material/Note';
 // Material Dashboard 2 React components
 import MDBox from "../../../../genericComponents/MDBox";
 import MDTypography from "../../../../genericComponents/MDTypography";
@@ -29,18 +30,16 @@ function OrdersOverview() {
     <Card sx={{ height: "100%" }}>
       <MDBox pt={3} px={3}>
         <MDTypography variant="h6" fontWeight="medium">
-          Orders overview
+          Taxonomy Progress overview
         </MDTypography>
         <MDBox mt={0} mb={2}>
           <MDTypography variant="button" color="text" fontWeight="regular">
             <MDTypography display="inline" variant="body2" verticalAlign="middle">
-              <ArrowUpwardIcon />
             </MDTypography>
             &nbsp;
             <MDTypography variant="button" color="text" fontWeight="medium">
-              24%
+              Version# 51 - Current Active
             </MDTypography>{" "}
-            this month
           </MDTypography>
         </MDBox>
       </MDBox>
@@ -48,32 +47,32 @@ function OrdersOverview() {
         <TimelineItem
           color="success"
           icon="notifications"
-          title="$2400, Design changes"
-          dateTime="22 DEC 7:20 PM"
+          title="New Base Taxonomy Created"
+          dateTime="3 Feb 7:20 PM"
         />
         <TimelineItem
-          color="error"
+          color="success"
           icon="inventory_2"
-          title="New order #1832412"
-          dateTime="21 DEC 11 PM"
+          title="New Audiences imported"
+          dateTime="4 Feb 11:00 AM"
         />
         <TimelineItem
-          color="info"
+          color="success"
           icon="shopping_cart"
-          title="Server payments for April"
-          dateTime="21 DEC 9:34 PM"
+          title="Taxonomy Prepared & Sent for Review"
+          dateTime="6 Feb 9:34 PM"
         />
         <TimelineItem
-          color="warning"
+          color="success"
           icon="payment"
-          title="New card added for order #4395133"
-          dateTime="20 DEC 2:20 AM"
+          title="Taxonomy Approved"
+          dateTime="8 Feb 2:20 PM"
         />
         <TimelineItem
-          color="primary"
+          color="success"
           icon="vpn_key"
-          title="New card added for order #4395133"
-          dateTime="18 DEC 4:54 AM"
+          title="Taxonomy Exported"
+          dateTime="9 Feb 4:54 PM"
           lastItem
         />
       </MDBox>
