@@ -1,5 +1,15 @@
 import {UploadFile} from '@mui/icons-material';
-import {Button, Dialog, Modal, Typography, FormControl, InputLabel, Select, MenuItem, OutlinedInput} from '@mui/material';
+import {
+  Button,
+  Dialog,
+  Modal,
+  Typography,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  OutlinedInput,
+} from '@mui/material';
 import {Stack} from '@mui/system';
 import React, {useState} from 'react';
 import MDBox from '../../../../../../genericComponents/MDBox';
@@ -140,7 +150,6 @@ const rows = [
   },
 ];
 
-
 const ITEM_HEIGHT = 60;
 const ITEM_PADDING_TOP = 12;
 const MenuProps = {
@@ -162,14 +171,14 @@ const FirstComponent = () => {
 
   const columns = [
     {field: 'col1', headerName: 'System ID', width: 120},
-  {field: 'col2', headerName: 'Onboarder Id', width: 120},
-  {field: 'col3', headerName: 'Taxonomy Id', width: 120},
-  {field: 'col4', headerName: 'Taxonomy Name', width: 300},
-  {field: 'col5', headerName: 'Sub Group', width: 120, editable: false},
-  {field: 'col6', headerName: 'Description', width: 220, editable: false},
-  {field: 'col7', headerName: 'Royalty', width: 140, editable: false},
-  {field: 'col8', headerName: 'DPCM', width: 140, editable: false},
-  {field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: false},
+    {field: 'col2', headerName: 'Onboarder Id', width: 120},
+    {field: 'col3', headerName: 'Taxonomy Id', width: 120},
+    {field: 'col4', headerName: 'Taxonomy Name', width: 300},
+    {field: 'col5', headerName: 'Sub Group', width: 120, editable: false},
+    {field: 'col6', headerName: 'Description', width: 220, editable: false},
+    {field: 'col7', headerName: 'Royalty', width: 140, editable: false},
+    {field: 'col8', headerName: 'DPCM', width: 140, editable: false},
+    {field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: false},
     {
       headerName: 'Actions',
       width: 160,
@@ -204,8 +213,8 @@ const FirstComponent = () => {
     }
   };
   console.log('fileInfos', fileInfos);
-  const [versionNumber, setVersionNumber] = useState("");
-  const [taxonomyStatus, setTaxonomyStatus] = useState("");
+  const [versionNumber, setVersionNumber] = useState('');
+  const [taxonomyStatus, setTaxonomyStatus] = useState('');
   const handleChange = event => {
     setVersionNumber(event.target.value);
   };
@@ -222,7 +231,7 @@ const FirstComponent = () => {
           <MDBox>
             {' '}
             <FormControl sx={{width: 200}}>
-              <InputLabel  id="demo-multiple-name-label">Version Number</InputLabel>{' '}
+              <InputLabel id="demo-multiple-name-label">Version Number</InputLabel>{' '}
               <Select
                 labelId="demo-multiple-name-label"
                 id="demo-multiple-name"

@@ -4,7 +4,7 @@ import {DataGrid, GridRowsProp, GridColDef} from '@mui/x-data-grid';
 // @mui material components
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
-
+import './styles.css';
 // Material Dashboard 2 React components
 import MDBox from '../../../../genericComponents/MDBox';
 import {ThemeProvider, createTheme} from '@mui/material/styles';
@@ -38,6 +38,9 @@ const ImportDataGrid = ({rows, columns}) => {
                   sx={{
                     fontSize: '16px',
                   }}
+                  getRowClassName={params =>
+                    params.indexRelativeToCurrentPage > 3 ? null : 'Mui-newrows'
+                  }
                 />
               </div>
             </MDBox>
