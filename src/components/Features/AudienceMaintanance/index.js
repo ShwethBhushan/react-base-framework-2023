@@ -84,9 +84,9 @@ const AudienceMaitanance = props => {
                 </MDBox>
                 <MDBox pt={3}>
                         <div className='d-flex flex-column gap-2 w-100 max-400'>
-                                <MDInput type="number" label="System ID" value="11716" disabled />
-                                <MDInput type="number" label="Onboarder ID" value="P11717_G"  disabled/>
-                                <MDInput type="number" label="Taxonomy ID" value="3" disabled/>
+                                <MDInput type="text" label="System ID" value="11716" disabled />
+                                <MDInput type="text" label="Onboarder ID" value="P11717_G"  disabled/>
+                                <MDInput type="text" label="Taxonomy ID" value="1171800" disabled/>
                                 <MDInput type="text" label="Taxonomy Name" value="BaseTest" />
                               
                                 <FormControl sx={{width: 400 }}>
