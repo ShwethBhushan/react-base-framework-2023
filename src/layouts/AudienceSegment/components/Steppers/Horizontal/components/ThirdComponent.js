@@ -91,15 +91,10 @@ const exportColumns = [
 ];
 
 const ThirdComponent = () => {
-  let navigate = useNavigate();
   const [destination, setDestination] = useState('');
   const handleChange = event => {
     setDestination(event.target.value);
   };
-
-  const goToDashboard = event => {
-    navigate('/dashboard')
-  }
 
   return (
     <Stack>
@@ -133,7 +128,7 @@ const ThirdComponent = () => {
             </Select>{' '}
           </FormControl>{' '}
         </MDBox>{' '}
-          <MDButton variant="gradient" color="info" onClick={goToDashboard}>Export</MDButton>
+          <MDButton variant="gradient" color="info">Export</MDButton>
       </Stack>
       <MDBox color="text" px={2}>
         <ImportDataGrid rows={exportRows} columns={exportColumns} />

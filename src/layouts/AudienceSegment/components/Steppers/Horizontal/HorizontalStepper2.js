@@ -14,6 +14,7 @@ import FirstComponent from './components/FirstComponent';
 import SecondComponent from './components/SecondComponent';
 import ThirdComponent from './components/ThirdComponent';
 import FinalComponent from './components/FinalComponent';
+import { useNavigate } from 'react-router-dom';
 const labelArrayStep1 = [
     'Update/Resume Taxonomy',
     'Import New Audiences',
@@ -51,6 +52,7 @@ const finalComponent = () => {
   return <div>Final Component</div>;
 };
 const HorizontalStepper2 = () => {
+   let navigate = useNavigate();
   const [steps, setSteps] = useState([
     {
       key: 'firstStep',
@@ -81,8 +83,7 @@ const HorizontalStepper2 = () => {
 
   const handleNext = () => {
     if (steps[steps.length - 1].key === activeStep.key) {
-      alert('You have completed all steps.');
-      return;
+      navigate('/dashboard')
     }
 
     const index = steps.findIndex(x => x.key === activeStep.key);
