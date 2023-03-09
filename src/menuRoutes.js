@@ -24,14 +24,14 @@ const definedRoutesSideNav = [
     route: '/dashboard',
     component: <Dashboard />,
   },
-  {
-    type: 'collapse',
-    name: 'Export',
-    key: 'export',
-    icon: <ExitToAppIcon />,
-    route: '/export',
-    component: null,
-  },
+  // {
+  //   type: 'collapse',
+  //   name: 'Export',
+  //   key: 'export',
+  //   icon: <ExitToAppIcon />,
+  //   route: '/export',
+  //   component: null,
+  // },
   {
     type: 'collapse',
     name: 'Profile',
