@@ -24,24 +24,8 @@ function navbar(theme, ownerState) {
   return {
     boxShadow: transparentNavbar || absolute ? "none" : navbarBoxShadow,
     backdropFilter: transparentNavbar || absolute ? "none" : `saturate(200%) blur(${pxToRem(30)})`,
-    backgroundColor:
-      transparentNavbar || absolute
-        ? `${transparent.main} !important`
-        : rgba(darkMode ? background.default : white.main, 0.8),
-
-    color: () => {
-      let color;
-
-      if (light) {
-        color = white.main;
-      } else if (transparentNavbar) {
-        color = text.main;
-      } else {
-        color = dark.main;
-      }
-
-      return color;
-    },
+    backgroundColor:"#49a3f1",
+    color: white.main,
     top: absolute ? 0 : pxToRem(12),
     minHeight: pxToRem(75),
     display: "grid",

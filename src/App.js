@@ -50,6 +50,7 @@ import definedRoutes from "../src/routes";
 import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "../src/context";
 
 // Images
+import brand from './assets/images/Brand.png'
 
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
@@ -152,7 +153,7 @@ export default function App() {
           <>
             <Sidenav
               color={sidenavColor}
-              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+              brand={brand}
               brandName="Audience Creation Digital MS"
               routes={definedRoutes}
               onMouseEnter={handleOnMouseEnter}
@@ -176,7 +177,7 @@ export default function App() {
         <>
           <Sidenav
             color={sidenavColor}
-            brand={(transparentSidenav && !darkMode) || whiteSidenav}
+            brand={brand}
             brandName="Audience Creation Digital MS"
             routes={definedRoutes}
             onMouseEnter={handleOnMouseEnter}

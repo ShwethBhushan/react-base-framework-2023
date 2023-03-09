@@ -46,6 +46,7 @@ import {
   setTransparentSidenav,
   setWhiteSidenav,
 } from "../../context";
+import { Avatar } from "@mui/material";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
   const [controller, dispatch] = useMaterialUIController();
@@ -146,7 +147,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       variant="permanent"
       ownerState={{ transparentSidenav, whiteSidenav, miniSidenav, darkMode }}
     >
-      <MDBox pt={3} pb={1} px={4} textAlign="center">
+      <MDBox pt={3}  px={6} textAlign="center">
         <MDBox
           display={{ xs: "block", xl: "none" }}
           position="absolute"
@@ -161,15 +162,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
           </MDTypography>
         </MDBox>
         <MDBox component={NavLink} to="/" display="flex" alignItems="center">
-          {brand && <MDBox component="img" src={brand} alt="Brand" width="2rem" />}
-          <MDBox
-            width={!brandName && "100%"}
-            sx={(theme) => sidenavLogoLabel(theme, { miniSidenav })}
-          >
-            <MDTypography component="h6" variant="button" fontWeight="medium" color={textColor}>
-              <span style={{ fontSize: "21px" }}> Audience Creation</span> <br />Digital Master Management
-            </MDTypography>
-          </MDBox>
+          {brand && <MDBox component="img" src={brand} alt="Brand"  sx={{ maxWidth: "100%", height: 70, borderRadius: 70 }} />}
         </MDBox>
       </MDBox>
       <Divider
