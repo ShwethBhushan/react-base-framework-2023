@@ -13,41 +13,42 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, {useState, useEffect, useMemo} from 'react';
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import {Routes, Route, Navigate, useLocation} from 'react-router-dom';
 
 // @mui material components
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Icon from "@mui/material/Icon";
+import {ThemeProvider} from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Icon from '@mui/material/Icon';
 
 // Material Dashboard 2 React components
-import MDBox from "../src/genericComponents/MDBox";
+import MDBox from '../src/genericComponents/MDBox';
 
 // Material Dashboard 2 React example components
-import Sidenav from "../src/layouts/Sidenav";
-import Configurator from "../src/components/Configurator";
+import Sidenav from '../src/layouts/Sidenav';
+import Configurator from '../src/components/Configurator';
 
 // Material Dashboard 2 React themes
-import theme from "../src/assets/theme";
-import themeRTL from "../src/assets/theme/theme-rtl";
+import theme from '../src/assets/theme';
+import themeRTL from '../src/assets/theme/theme-rtl';
 
 // Material Dashboard 2 React Dark Mode themes
-import themeDark from "../src/assets/theme-dark";
-import themeDarkRTL from "../src/assets/theme-dark/theme-rtl";
+import themeDark from '../src/assets/theme-dark';
+import themeDarkRTL from '../src/assets/theme-dark/theme-rtl';
 
 // RTL plugins
-import rtlPlugin from "stylis-plugin-rtl";
-import { CacheProvider } from "@emotion/react";
-import createCache from "@emotion/cache";
+import rtlPlugin from 'stylis-plugin-rtl';
+import {CacheProvider} from '@emotion/react';
+import createCache from '@emotion/cache';
 
 // Material Dashboard 2 React routes
-import definedRoutes from "../src/routes";
+import definedRoutes from '../src/routes';
 
+import definedRoutesSideNav from './menuRoutes';
 // Material Dashboard 2 React contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "../src/context";
+import {useMaterialUIController, setMiniSidenav, setOpenConfigurator} from '../src/context';
 
 // Images
 
@@ -65,12 +66,12 @@ export default function App() {
   } = controller;
   const [onMouseEnter, setOnMouseEnter] = useState(false);
   const [rtlCache, setRtlCache] = useState(null);
-  const { pathname } = useLocation();
+  const {pathname} = useLocation();
 
   // Cache for the rtl
   useMemo(() => {
     const cacheRtl = createCache({
-      key: "rtl",
+      key: 'rtl',
       stylisPlugins: [rtlPlugin],
     });
 
@@ -98,7 +99,7 @@ export default function App() {
 
   // Setting the dir attribute for the body element
   useEffect(() => {
-    document.body.setAttribute("dir", direction);
+    document.body.setAttribute('dir', direction);
   }, [direction]);
 
   // Setting page scroll to 0 when changing the route
@@ -107,8 +108,8 @@ export default function App() {
     document.scrollingElement.scrollTop = 0;
   }, [pathname]);
 
-  const getRoutes = (allRoutes) =>
-    allRoutes.map((route) => {
+  const getRoutes = allRoutes =>
+    allRoutes.map(route => {
       if (route.collapse) {
         return getRoutes(route.collapse);
       }
@@ -135,7 +136,7 @@ export default function App() {
       bottom="2rem"
       zIndex={99}
       color="dark"
-      sx={{ cursor: "pointer" }}
+      sx={{cursor: 'pointer'}}
       onClick={handleConfiguratorOpen}
     >
       <Icon fontSize="small" color="inherit">
@@ -144,17 +145,17 @@ export default function App() {
     </MDBox>
   );
 
-  return direction === "rtl" ? (
+  return direction === 'rtl' ? (
     <CacheProvider value={rtlCache}>
       <ThemeProvider theme={darkMode ? themeDarkRTL : themeRTL}>
         <CssBaseline />
-        {layout === "dashboard" && (
+        {layout === 'dashboard' && (
           <>
             <Sidenav
               color={sidenavColor}
               brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
               brandName="Audience Creation Digital MS"
-              routes={definedRoutes}
+              routes={definedRoutesSideNav}
               onMouseEnter={handleOnMouseEnter}
               onMouseLeave={handleOnMouseLeave}
             />
@@ -162,7 +163,7 @@ export default function App() {
             {configsButton}
           </>
         )}
-        {layout === "vr" && <Configurator />}
+        {layout === 'vr' && <Configurator />}
         <Routes>
           {getRoutes(definedRoutes)}
           <Route path="*" element={<Navigate to="/dashboard" />} />
@@ -172,22 +173,21 @@ export default function App() {
   ) : (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
-      {layout === "dashboard" && (
+      {layout === 'dashboard' && (
         <>
           <Sidenav
             color={sidenavColor}
             brand={(transparentSidenav && !darkMode) || whiteSidenav}
             brandName="Audience Creation Digital MS"
-            routes={definedRoutes}
+            routes={definedRoutesSideNav}
             onMouseEnter={handleOnMouseEnter}
             onMouseLeave={handleOnMouseLeave}
-
           />
           <Configurator />
           {configsButton}
         </>
       )}
-      {layout === "vr" && <Configurator />}
+      {layout === 'vr' && <Configurator />}
       <Routes>
         {getRoutes(definedRoutes)}
         <Route path="*" element={<Navigate to="/dashboard" />} />
