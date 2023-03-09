@@ -133,7 +133,12 @@ const ThirdComponent = () => {
         </MDButton>
       </Stack>
       <MDBox color="text" px={2}>
-        <ImportDataGrid rows={exportRows} columns={exportColumns} selectedRows={true} />
+        <ImportDataGrid
+          rows={exportRows}
+          columns={exportColumns}
+          selectedRows={true}
+          isCheckbox={false}
+        />
       </MDBox>
     </Stack>
   );

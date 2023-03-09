@@ -1,6 +1,6 @@
 import {Button, Card, ListItem, Typography} from '@mui/material';
-import { Stack } from '@mui/system';
-import React, { useState } from 'react';
+import {Stack} from '@mui/system';
+import React, {useState} from 'react';
 import MDBox from '../../../../../genericComponents/MDBox';
 import MDButton from '../../../../../genericComponents/MDButton';
 import MDTypography from '../../../../../genericComponents/MDTypography';
@@ -14,45 +14,47 @@ import FirstComponent from './components/FirstComponent';
 import SecondComponent from './components/SecondComponent';
 import ThirdComponent from './components/ThirdComponent';
 import FinalComponent from './components/FinalComponent';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 const labelArrayStep1 = [
-    'Update/Resume Taxonomy',
-    'Import New Audiences',
-    'Validations',
-    'Progress',
-    'Preview & Submit',
+  'Update/Resume Taxonomy',
+  'Import New Audiences',
+  'Validations',
+  'Progress',
+  'Preview & Submit',
 ];
 const labelArrayStep2 = [
-    'View Updated Taxonomy',
-    'View the Changes Only',
-    'Approve/Reject ',
-    'Preview ',
-]; const labelArrayStep3 = [
-    ' Push to destination',
-    'Preview ',
+  'View Updated Taxonomy',
+  'View the Changes Only',
+  'Approve/Reject ',
+  'Preview ',
 ];
+const labelArrayStep3 = [' Push to destination', 'Preview '];
 const firstComponent = () => {
-    return (
-        <Stack sx={{ width: '100%' }}>
-            <VerticleStepper key='first' labelArray={labelArrayStep1} initialStep={1} />
-        </Stack>
-    );
+  return (
+    <Stack sx={{width: '100%'}}>
+      <VerticleStepper key="first" labelArray={labelArrayStep1} initialStep={1} />
+    </Stack>
+  );
 };
 const secondComponent = () => {
-    return <Stack sx={{ width: '100%' }}>
-        <VerticleStepper key='second' labelArray={labelArrayStep2} initialStep={1} />
-    </Stack>;
+  return (
+    <Stack sx={{width: '100%'}}>
+      <VerticleStepper key="second" labelArray={labelArrayStep2} initialStep={1} />
+    </Stack>
+  );
 };
 const thirdComponent = () => {
-    return <Stack sx={{ width: '100%' }}>
-        <VerticleStepper key='third' labelArray={labelArrayStep3} initialStep={1} />
-    </Stack>;
+  return (
+    <Stack sx={{width: '100%'}}>
+      <VerticleStepper key="third" labelArray={labelArrayStep3} initialStep={1} />
+    </Stack>
+  );
 };
 const finalComponent = () => {
   return <div>Final Component</div>;
 };
 const HorizontalStepper2 = () => {
-   let navigate = useNavigate();
+  let navigate = useNavigate();
   const [steps, setSteps] = useState([
     {
       key: 'firstStep',
@@ -83,7 +85,7 @@ const HorizontalStepper2 = () => {
 
   const handleNext = () => {
     if (steps[steps.length - 1].key === activeStep.key) {
-      navigate('/dashboard')
+      navigate('/dashboard');
     }
 
     const index = steps.findIndex(x => x.key === activeStep.key);

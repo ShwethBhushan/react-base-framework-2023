@@ -13,7 +13,7 @@ import TaxonomyGridAction from '../../../../components/Features/Datagrid/Taxonom
 import {Button} from '@mui/material';
 import ImportGridAction from './gridAction';
 
-const ImportDataGrid = ({rows, columns, selectedRows}) => {
+const ImportDataGrid = ({rows, columns, selectedRows, isCheckbox}) => {
   const [pageSize, setPageSize] = useState(5);
   const [rowId, setRowId] = useState(null);
   return (
@@ -24,7 +24,7 @@ const ImportDataGrid = ({rows, columns, selectedRows}) => {
             <MDBox>
               <div style={{height: 450}}>
                 <DataGrid
-                  checkboxSelection
+                  checkboxSelection={isCheckbox ? true : false}
                   rows={rows}
                   columns={columns}
                   getRowId={row => row.id}
@@ -40,7 +40,7 @@ const ImportDataGrid = ({rows, columns, selectedRows}) => {
                     fontSize: '16px',
                   }}
                   getRowClassName={params =>
-                    params.indexRelativeToCurrentPage < 4
+                    params.indexRelativeToCurrentPage > 5
                       ? !selectedRows
                         ? 'Mui-newrows'
                         : null

@@ -235,7 +235,7 @@ const SecondComponent = () => {
         </Stack>{' '}
       </MDBox>
       <MDBox>
-        <ImportDataGrid rows={rows} columns={columns} />
+        <ImportDataGrid rows={rows} columns={columns} isCheckbox={true} />
       </MDBox>
     </Stack>
   );

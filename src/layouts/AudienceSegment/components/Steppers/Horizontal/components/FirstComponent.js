@@ -282,7 +282,7 @@ const FirstComponent = () => {
         </MDBox>
       </MDBox>
       <MDBox>
-        <ImportDataGrid rows={rows} columns={columns} />
+        <ImportDataGrid rows={rows} columns={columns} isCheckbox={false} />
       </MDBox>
       <Modal open={isEdit}>
         <AudienceMaitanance onCancel={onCancel} />
