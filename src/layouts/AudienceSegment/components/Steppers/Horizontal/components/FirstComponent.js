@@ -9,6 +9,10 @@ import {
   Select,
   MenuItem,
   OutlinedInput,
+  DialogTitle,
+  List,
+  Grid,
+  Card,
 } from '@mui/material';
 import {Stack} from '@mui/system';
 import React, {useState} from 'react';
@@ -17,6 +21,8 @@ import MDTypography from '../../../../../../genericComponents/MDTypography';
 import ImportDataGrid from '../../../DataGrid';
 import ImportGridAction from '../../../DataGrid/gridAction';
 import AudienceMaitanance from '../../../../../../components/Features/AudienceMaintanance';
+import MDButton from '../../../../../../genericComponents/MDButton';
+import UploadFileComponent from '../../../../../../components/Features/UploadFile';
 const rows = [
   {
     id: 1,
@@ -162,6 +168,9 @@ const FirstComponent = () => {
   const handleEdit = () => {
     setIsEdit(!isEdit);
   };
+  const handleOpenFileUpload = () => {
+    setOpenFileUpload(!openFileUpload);
+  };
 
   const handleDelete = () => {};
 
@@ -188,31 +197,21 @@ const FirstComponent = () => {
           handleSubmit={handleEdit}
           handleDelete={handleDelete}
           handleView={handleView}
+          selectedRows={false}
         />
       ),
     },
   ];
 
+  const [openFileUpload, setOpenFileUpload] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
   const onCancel = () => {
     setIsEdit(false);
   };
-
-  const [isEdit, setIsEdit] = useState(false);
-  const [fileInfos, setFileInfo] = useState();
-  const [fileError, setFileError] = useState(false);
-  const handleFileUpload = event => {
-    event.preventDefault();
-    let file = event.target.files[0];
-    let type = file.type;
-    console.log('type', type);
-    if (type === 'image/png' || type === 'xlsx') {
-      setFileError(true);
-    } else {
-      setFileInfo(file.name);
-      setFileError(false);
-    }
+  const onCancelUpload = () => {
+    setOpenFileUpload(false);
   };
-  console.log('fileInfos', fileInfos);
+
   const [versionNumber, setVersionNumber] = useState('');
   const [taxonomyStatus, setTaxonomyStatus] = useState('');
   const handleChange = event => {
@@ -225,13 +224,10 @@ const FirstComponent = () => {
   return (
     <Stack>
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-        {' '}
         <Stack direction={'row'} spacing={3}>
-          {' '}
           <MDBox>
-            {' '}
             <FormControl sx={{width: 200}}>
-              <InputLabel id="demo-multiple-name-label">Version Number</InputLabel>{' '}
+              <InputLabel id="demo-multiple-name-label">Version Number</InputLabel>
               <Select
                 labelId="demo-multiple-name-label"
                 id="demo-multiple-name"
@@ -243,16 +239,15 @@ const FirstComponent = () => {
               >
                 {versionNumbersData.map(item => (
                   <MenuItem key={item} value={item}>
-                    {item}{' '}
+                    {item}
                   </MenuItem>
-                ))}{' '}
-              </Select>{' '}
-            </FormControl>{' '}
-          </MDBox>{' '}
+                ))}
+              </Select>
+            </FormControl>
+          </MDBox>
           <MDBox>
-            {' '}
             <FormControl sx={{width: 200}}>
-              <InputLabel id="taxonomyStatus-label">Taxonomy Status</InputLabel>{' '}
+              <InputLabel id="taxonomyStatus-label">Taxonomy Status</InputLabel>
               <Select
                 labelId="taxonomyStatus-label"
                 id="taxonomyStatus"
@@ -262,45 +257,39 @@ const FirstComponent = () => {
                 MenuProps={MenuProps}
                 style={{padding: 12}}
               >
-                {' '}
                 {taxonomyStatusData.map(item => (
                   <MenuItem key={item} value={item}>
-                    {item}{' '}
+                    {item}
                   </MenuItem>
-                ))}{' '}
-              </Select>{' '}
-            </FormControl>{' '}
-          </MDBox>{' '}
-        </Stack>{' '}
+                ))}
+              </Select>
+            </FormControl>
+          </MDBox>
+        </Stack>
         <MDBox color="text" px={2}>
-          {' '}
           <Stack direction="column" spacing={2}>
-            {' '}
-            <Button startIcon={<UploadFile color="info" />} variant="outlined" component="label">
-              {' '}
+            <Button
+              onClick={handleOpenFileUpload}
+              startIcon={<UploadFile color="info" />}
+              variant="outlined"
+              component="label"
+            >
               <Typography variant="h6" color={'white'}>
-                Upload File{' '}
-              </Typography>{' '}
-              <input onChange={handleFileUpload} hidden accept=" .xls, .xlsx, .csv" type="file" />{' '}
-            </Button>{' '}
-            {fileInfos && (
-              <Typography variant="caption" color={'black'}>
-                File: {fileInfos}{' '}
+                Upload File
               </Typography>
-            )}{' '}
-          </Stack>{' '}
-          {fileError && (
-            <Typography variant="caption" color={'red'}>
-              Please Upload Excel File{' '}
-            </Typography>
-          )}{' '}
-        </MDBox>{' '}
+            </Button>
+          </Stack>
+        </MDBox>
       </MDBox>
       <MDBox>
         <ImportDataGrid rows={rows} columns={columns} />
       </MDBox>
       <Modal open={isEdit}>
         <AudienceMaitanance onCancel={onCancel} />
+      </Modal>
+
+      <Modal onClose={onCancelUpload} open={openFileUpload}>
+        <UploadFileComponent onCancelUpload={onCancelUpload} />
       </Modal>
     </Stack>
   );

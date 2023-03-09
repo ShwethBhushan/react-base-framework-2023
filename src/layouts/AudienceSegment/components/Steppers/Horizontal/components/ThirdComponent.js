@@ -15,7 +15,7 @@ import MDTypography from '../../../../../../genericComponents/MDTypography';
 import ImportDataGrid from '../../../DataGrid';
 import ImportGridAction from '../../../DataGrid/gridAction';
 import MDButton from '../../../../../../genericComponents/MDButton';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 const ITEM_HEIGHT = 60;
 const ITEM_PADDING_TOP = 12;
@@ -128,10 +128,12 @@ const ThirdComponent = () => {
             </Select>{' '}
           </FormControl>{' '}
         </MDBox>{' '}
-          <MDButton variant="gradient" color="info">Export</MDButton>
+        <MDButton variant="gradient" color="info">
+          Export
+        </MDButton>
       </Stack>
       <MDBox color="text" px={2}>
-        <ImportDataGrid rows={exportRows} columns={exportColumns} />
+        <ImportDataGrid rows={exportRows} columns={exportColumns} selectedRows={true} />
       </MDBox>
     </Stack>
   );
