@@ -9,7 +9,6 @@ import Card from '@mui/material/Card';
 import MDTypography from '../../genericComponents/MDTypography';
 import HorizontalStepper from './components/Steppers/Horizontal';
 import HorizontalStepper2 from './components/Steppers/Horizontal/HorizontalStepper2';
-import StepperMUI from './components/Steppers/StepperMUI';
 
 const AudienceSegment = () => {
   return (
