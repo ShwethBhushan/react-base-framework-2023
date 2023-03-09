@@ -16,6 +16,17 @@ import ImportGridAction from './gridAction';
 const ImportDataGrid = ({rows, columns, selectedRows, isCheckbox}) => {
   const [pageSize, setPageSize] = useState(5);
   const [rowId, setRowId] = useState(null);
+  const handleEditedCells = params =>
+    (params.id === 2 && params.field === 'col6') ||
+    (params.id === 2 && params.field === 'col4') ||
+    (params.id === 4 && params.field === 'col6')
+      ? isCheckbox
+        ? 'Mui-editedcells'
+        : null
+      : null;
+
+  const handleRowBackground = params =>
+    params.indexRelativeToCurrentPage > 5 ? (!selectedRows ? 'Mui-newrows' : null) : null;
   return (
     <MDBox pt={2} pb={3}>
       <Grid container spacing={6}>
@@ -39,13 +50,8 @@ const ImportDataGrid = ({rows, columns, selectedRows, isCheckbox}) => {
                   sx={{
                     fontSize: '16px',
                   }}
-                  getRowClassName={params =>
-                    params.indexRelativeToCurrentPage > 5
-                      ? !selectedRows
-                        ? 'Mui-newrows'
-                        : null
-                      : null
-                  }
+                  getRowClassName={handleRowBackground}
+                  getCellClassName={handleEditedCells}
                 />
               </div>
             </MDBox>

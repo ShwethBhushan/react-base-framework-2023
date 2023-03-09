@@ -1,3 +1,6 @@
 .MuiDataGrid-row.Mui-newrows {
   background-color: #b9dcff;
 }
+.MuiDataGrid-cell.Mui-editedcells {
+  background-color: rgb(177, 255, 180);
+}
