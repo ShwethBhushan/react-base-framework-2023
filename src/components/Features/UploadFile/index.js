@@ -172,18 +172,18 @@ const UploadFileComponent = props => {
             coloredShadow="info"
           >
             <MDTypography variant="h6" color="white">
-              Upload Taxonomy File
+              Import New Audiences
             </MDTypography>
           </MDBox>
           <MDBox pt={3}>
             <MDBox color="text" px={2}>
               <Stack direction="row" spacing={2} m={3} style={{justifyContent: 'space-around'}}>
-                <Button
+                {/* <Button
                   startIcon={<UploadFile color="info" />}
                   variant="outlined"
                   component="label"
                 >
-                  <Typography variant="h6" color={'white'}>
+                  <Typography variant="h4" color={'white'}>
                     Upload File
                   </Typography>
                   <input
@@ -192,7 +192,14 @@ const UploadFileComponent = props => {
                     accept=" .xls, .xlsx, .csv"
                     type="file"
                   />
-                </Button>
+                </Button> */}
+                <MDButton
+                      onChange={handleFileUpload}
+                      variant="gradient"
+                      color="info"
+                    >
+                      Upload File
+                 </MDButton>
                 {fileInfos && (
                   <Typography variant="caption" color={'black'}>
                     File: {fileInfos}

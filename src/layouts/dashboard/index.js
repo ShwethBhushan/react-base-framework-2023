@@ -51,7 +51,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="In Progress Taxonomy Version"
+                title="Next Active Taxonomy Version"
                 count={52}
                 percentage={{
                   color: "success",
@@ -67,11 +67,11 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="success"
                 icon="store"
-                title="Taxonomy Status"
-                count="Next Active"
+                title="Next Active Taxonomy Status"
+                count="Submitted for Review"
                 percentage={{
                   color: "success",
-                  amount: "Submitted for Review ",
+                  amount: "Submitted ",
                   label: "2 days ago",
                 }}
               />
@@ -81,12 +81,12 @@ function Dashboard() {
             <MDBox mb={1.5}>
               <ComplexStatisticsCard
                 icon="leaderboard"
-                title="No of Audience Segments in Current Taxonomy"
+                title="#Audience Segments in Next Active Taxonomy"
                 count="2780"
                 percentage={{
                   color: "success",
                   amount: "+ 120 Audience Segments",
-                  label: "new in current taxonomy",
+                  label: "new",
                 }}
               />
             </MDBox>
@@ -114,8 +114,8 @@ function Dashboard() {
                 <ReportsBarChart
                   color="info"
                   title="Taxonomies Per Month"
-                  description="1 Taxonomy Created in a Month"
-                  date="In Progress taxonomy created 5 days ago."
+                  description=""
+                  date=""
                   chart={reportsBarChartData}
                 />
               </MDBox>
@@ -130,7 +130,7 @@ function Dashboard() {
                       No of new Audiences added in each Taxonomy Version.
                     </>
                   }
-                  date="20 new Audiences added in Next Active taxonomy 2 days ago."
+                  date=""
                   chart={sales}
                 />
               </MDBox>
@@ -141,7 +141,7 @@ function Dashboard() {
                   color="dark"
                   title="Audience Segments"
                   description="Number of Audience Segments added in each Taxonomy versions"
-                  date="2780 total Audience Segments"
+                  date=""
                   chart={tasks}
                 />
               </MDBox>

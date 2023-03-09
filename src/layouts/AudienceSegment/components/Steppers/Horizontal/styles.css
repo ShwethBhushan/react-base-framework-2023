@@ -4,21 +4,22 @@
 .box .steps ul {
   overflow: hidden;
   display: flex;
-  justify-content: center;
   list-style: none;
+}
+.box .steps ul li {
+  width: 25%;
 }
 .box .steps ul li div {
   color: #999;
   padding: 10px 0 15px 45px;
   position: relative;
   background: #f5f5f5;
-  width: 209px;
+  width: 100%;
 }
 .box .steps ul li div span {
   font-size: 13px;
 }
 .box .steps ul li:first-child div {
-  width: 209px;
   padding-left: 15px;
 }
 .box .steps ul li div::before {
@@ -60,7 +61,9 @@
 .box .steps ul li.active div::after {
   border-left: 30px solid #167495;
 }
+.nav{
 
+}
 .box .step-component {
   padding: 20px;
   height: 380px;

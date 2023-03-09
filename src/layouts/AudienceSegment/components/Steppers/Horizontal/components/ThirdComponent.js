@@ -99,11 +99,6 @@ const ThirdComponent = () => {
   return (
     <Stack>
       <MDBox display="flex" justifyContent="space-between" alignItems="center" p={3}>
-        <MDBox>
-          <MDTypography variant="h4" gutterBottom>
-            Export
-          </MDTypography>
-        </MDBox>
       </MDBox>
       <Stack direction={'row'} spacing={6}>
         {' '}

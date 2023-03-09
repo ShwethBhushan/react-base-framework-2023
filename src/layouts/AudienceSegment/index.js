@@ -4,6 +4,7 @@ import DashboardNavbar from '../Navbars/DashboardNavbar';
 import MDBox from '../../genericComponents/MDBox';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
+import HorizontalNonLinearStepper from "../../components/Stepper"
 
 // Material Dashboard 2 React components
 import MDTypography from '../../genericComponents/MDTypography';
@@ -14,7 +15,7 @@ const AudienceSegment = () => {
   return (
     <DashboardLayout>
       <DashboardNavbar />
-      <MDBox py={3}>
+      <MDBox mt={4} py={3}>
         <Grid container spacing={6}>
           <Grid item xs={12}>
             <Card>
@@ -29,7 +30,7 @@ const AudienceSegment = () => {
                 coloredShadow="info"
               >
                 <MDTypography variant="h6" color="white">
-                  Taxonomy Management
+                  Taxonomy Maintenance
                 </MDTypography>
               </MDBox>
               <MDBox pt={2}>

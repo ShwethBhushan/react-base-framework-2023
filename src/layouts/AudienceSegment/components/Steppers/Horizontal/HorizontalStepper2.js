@@ -74,12 +74,12 @@ const HorizontalStepper2 = () => {
       isDone: false,
       component: <ThirdComponent key={'thirdStep'} />,
     },
-    // {
-    //   key: 'finalStep',
-    //   label: 'Summary',
-    //   isDone: false,
-    //   component: <FinalComponent key={'finalStep'} />,
-    // },
+    {
+      key: 'finalStep',
+      label: 'Summary',
+      isDone: false,
+      component: <FinalComponent key={'finalStep'} />,
+    },
   ]);
   const [activeStep, setActiveStep] = useState(steps[0]);
 
@@ -147,7 +147,7 @@ const HorizontalStepper2 = () => {
               ? activeStep.key === 'secondStep'
                 ? 'Approve'
                 : 'Next'
-              : ' Submit for Reviews'
+              : ' Submit for Review'
             : 'Submit'}
         </MDButton>
       </div>

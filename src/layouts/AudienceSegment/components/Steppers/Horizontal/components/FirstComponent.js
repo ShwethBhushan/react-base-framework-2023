@@ -179,17 +179,18 @@ const FirstComponent = () => {
   };
 
   const columns = [
-    {field: 'col1', headerName: 'System ID', width: 120},
-    {field: 'col2', headerName: 'Onboarder Id', width: 120},
-    {field: 'col3', headerName: 'Taxonomy Id', width: 120},
-    {field: 'col4', headerName: 'Taxonomy Name', width: 300},
-    {field: 'col5', headerName: 'Sub Group', width: 120, editable: false},
-    {field: 'col6', headerName: 'Description', width: 220, editable: false},
-    {field: 'col7', headerName: 'Royalty', width: 140, editable: false},
-    {field: 'col8', headerName: 'DPCM', width: 140, editable: false},
-    {field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: false},
+    {field: 'col1', headerName: 'System ID', width: 120, headerClassName: 'super-app-theme--header'},
+    {field: 'col2', headerName: 'Onboarder Id', width: 120, headerClassName: 'super-app-theme--header'},
+    {field: 'col3', headerName: 'Taxonomy Id', width: 120, headerClassName: 'super-app-theme--header'},
+    {field: 'col4', headerName: 'Taxonomy Name', width: 300, headerClassName: 'super-app-theme--header'},
+    {field: 'col5', headerName: 'Sub Group', width: 120, editable: false, headerClassName: 'super-app-theme--header'},
+    {field: 'col6', headerName: 'Description', width: 220, editable: false, headerClassName: 'super-app-theme--header'},
+    {field: 'col7', headerName: 'Royalty', width: 140, editable: false, headerClassName: 'super-app-theme--header'},
+    {field: 'col8', headerName: 'DPCM', width: 140, editable: false, headerClassName: 'super-app-theme--header'},
+    {field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: false, headerClassName: 'super-app-theme--header'},
     {
       headerName: 'Actions',
+      headerClassName: 'super-app-theme--header',
       width: 160,
       renderCell: () => (
         <ImportGridAction
@@ -275,7 +276,7 @@ const FirstComponent = () => {
               component="label"
             >
               <Typography variant="h6" color={'white'}>
-                Upload File
+                Add New Audiences
               </Typography>
             </Button>
           </Stack>
