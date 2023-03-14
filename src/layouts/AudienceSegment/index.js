@@ -4,12 +4,13 @@ import DashboardNavbar from '../Navbars/DashboardNavbar';
 import MDBox from '../../genericComponents/MDBox';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
-import HorizontalNonLinearStepper from "../../components/Stepper"
+import HorizontalNonLinearStepper from '../../components/Stepper';
 
 // Material Dashboard 2 React components
 import MDTypography from '../../genericComponents/MDTypography';
 import HorizontalStepper from './components/Steppers/Horizontal';
 import HorizontalStepper2 from './components/Steppers/Horizontal/HorizontalStepper2';
+import StepperUi from '../../components/Stepper/StepperUi';
 
 const AudienceSegment = () => {
   return (
@@ -34,7 +35,8 @@ const AudienceSegment = () => {
                 </MDTypography>
               </MDBox>
               <MDBox pt={2}>
-                <HorizontalStepper2 />
+                {/* <HorizontalStepper2 /> */}
+                <StepperUi />
               </MDBox>
             </Card>
           </Grid>

@@ -1,0 +1,94 @@
+.wrapper {
+  display: flex;
+  padding: 40px;
+  margin-top: 170px;
+}
+.onboarding__left-image {
+  width: 100%;
+  height: 100%;
+  max-width: 585px;
+  height: 627px;
+}
+.onboarding__left-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.onboarding__right {
+  padding-left: 40px;
+}
+
+.first-step {
+  margin-top: 40px;
+}
+.first-step p {
+  margin-top: 10px;
+}
+.first-step__buttons {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+}
+.first-step__buttons .btn {
+  margin-bottom: 20px;
+}
+.form-stepper__step1,
+.form-stepper__step2,
+.form-stepper__step3 {
+  margin-top: 60px;
+}
+.form-stepper__step1 h2,
+.form-stepper__step2 h2,
+.form-stepper__step3 h2 {
+  margin-bottom: 40px;
+}
+.form-stepper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.form-stepper__body {
+  min-height: 500px;
+}
+.form-stepper__action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.form-stepper .btn {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.check-group {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+}
+.check-group input {
+  min-width: 0px;
+  margin-right: 20px;
+}
+.check-group [type='checkbox'] {
+  padding: 30px;
+}
+.step-header__container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.step-header__step {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-light);
+}
+.step-header__step h2 {
+  color: white;
+}
+.completed {
+  background-color: var(--primary);
+}
