@@ -12,6 +12,7 @@ import MDTypography from "../../../../genericComponents/MDTypography";
 import TaxonomyGridAction from './TaxonomyGridAction';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
+import ImportGridAction from '../../../../layouts/AudienceSegment/components/DataGrid/gridAction';
 const rows = [
     { id: 1, col1: '11716', col2: 'P11717_G', col3: '1171800', col4: 'BaseTest', col5: 'G', col6: 'MockDesc', col7: 'Y', col8: '1.66', col9: 'Folder1>Folder2<Folder3', col10: '' },
     { id: 2, col1: '11716', col2: 'P11717_G', col3: '1171800', col4: 'BaseTest', col5: 'G', col6: 'MockDesc', col7: 'Y', col8: '1.66', col9: 'Folder1>Folder2<Folder3', col10: '' },
@@ -26,15 +27,15 @@ const rows = [
 ];
 
 const columns = [
-    { field: 'col1', headerName: 'System ID', width: 80 },
-    { field: 'col2', headerName: 'Onboarder Id', width: 80 },
-    { field: 'col3', headerName: 'Taxonomy Id', width: 150 },
-    { field: 'col4', headerName: 'Taxonomy Name', width: 200 },
-    { field: 'col5', headerName: 'Sub Group', width: 80, editable: true },
-    { field: 'col6', headerName: 'Description', width: 150, editable: true },
-    { field: 'col7', headerName: 'Royalty', width: 80, editable: true },
-    { field: 'col8', headerName: 'DPCM', width: 100, editable: true },
-    { field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: true },
+    { field: 'col1', headerName: 'System ID', width: 80 , headerClassName: 'super-app-theme--header' },
+    { field: 'col2', headerName: 'Onboarder Id', width: 80, headerClassName: 'super-app-theme--header' },
+    { field: 'col3', headerName: 'Taxonomy Id', width: 150 , headerClassName: 'super-app-theme--header'},
+    { field: 'col4', headerName: 'Taxonomy Name', width: 200 , headerClassName: 'super-app-theme--header'},
+    { field: 'col5', headerName: 'Sub Group', width: 80, editable: true, headerClassName: 'super-app-theme--header' },
+    { field: 'col6', headerName: 'Description', width: 150, editable: true, headerClassName: 'super-app-theme--header' },
+    { field: 'col7', headerName: 'Royalty', width: 80, editable: true , headerClassName: 'super-app-theme--header'},
+    { field: 'col8', headerName: 'DPCM', width: 100, editable: true , headerClassName: 'super-app-theme--header'},
+    { field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: true , headerClassName: 'super-app-theme--header'},
     { field: 'col10', headerName: 'Actions', width: 100 },
 ];
 
@@ -125,40 +126,52 @@ export default function TaxonomyGrid() {
     const columnsGrid = [
         {
             field: "systemId",
+            headerClassName: 'super-app-theme--header',
             renderHeader: () => <span className="headername">{"Taxonomy Version "}</span>,
             width: 200,
             editable: false,
         },
         {
             field: "taxonomyId",
+            headerClassName: 'super-app-theme--header',
             renderHeader: () => <span className="headername">{"Status "}</span>,
             width: 130,
             editable: true,
         },
         {
             field: "onBoarderId",
+            headerClassName: 'super-app-theme--header',
             renderHeader: () => <span className="headername">{"Completed Date Time"}</span>,
             width: 200,
             editable: true,
         },
         {
             field: "createdBy",
+            headerClassName: 'super-app-theme--header',
             renderHeader: () => <span className="headername">{"Created By"}</span>,
             width: 200,
             editable: true,
         },
         {
             field: "ReviewedBy",
+            headerClassName: 'super-app-theme--header',
             renderHeader: () => <span className="headername">{"Reviewer"}</span>,
             width: 200,
             editable: true,
         },
         {
             field: "actions",
+            headerClassName: 'super-app-theme--header',
             renderHeader: () => <span className="headername">{"Actions"}</span>,
             width: 200,
             editable: true,
-        }
+        },
+        {
+            headerName: 'Actions',
+            headerClassName: 'super-app-theme--header',
+            width: 160,
+            renderCell: () => <ImportGridAction type="readonly" />,
+          },
     ];
     const theme = createTheme({
         typography: {
@@ -206,7 +219,10 @@ export default function TaxonomyGrid() {
                                             bottom: params.isLastVisible ? 0 : 5,
                                         })}
                                         sx={{
-                                            fontSize: "16px"
+                                            fontSize: "16px",
+                                            '& .super-app-theme--header': {
+                                                backgroundColor: 'rgba(159 169 185 / 50%)',
+                                              },
                                         }}
 
                                     /></div>

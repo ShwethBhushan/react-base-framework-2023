@@ -20,17 +20,17 @@ const rows = [
     { id: 10, col1: '11716', col2: 'P11717_G', col3: '1171800', col4: 'BaseTest', col5: 'G', col6: 'MockDesc', col7: 'Y', col8: '1.66', col9: 'Folder1>Folder2<Folder3', col10: '' },
 ];
 const columns = [
-    { field: 'col1', headerName: 'System ID', width: 80 },
-    { field: 'col2', headerName: 'Onboarder Id', width: 80 },
-    { field: 'col3', headerName: 'Taxonomy Id', width: 150 },
-    { field: 'col4', headerName: 'Taxonomy Name', width: 200 },
-    { field: 'col5', headerName: 'Sub Group', width: 80, editable: true },
-    { field: 'col6', headerName: 'Description', width: 150, editable: true },
-    { field: 'col7', headerName: 'Royalty', width: 80, editable: true },
-    { field: 'col8', headerName: 'DPCM', width: 100, editable: true },
-    { field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: true },
-    { field: 'col10', headerName: 'Actions', width: 100 },
-];
+        { field: 'col1', headerName: 'System ID', width: 80, headerClassName: 'super-app-theme--header'},
+        { field: 'col2', headerName: 'Onboarder Id', width: 80, headerClassName: 'super-app-theme--header' },
+        { field: 'col3', headerName: 'Taxonomy Id', width: 150 , headerClassName: 'super-app-theme--header'},
+        { field: 'col4', headerName: 'Taxonomy Name', width: 200 , headerClassName: 'super-app-theme--header'},
+        { field: 'col5', headerName: 'Sub Group', width: 80, editable: true , headerClassName: 'super-app-theme--header'},
+        { field: 'col6', headerName: 'Description', width: 150, editable: true , headerClassName: 'super-app-theme--header'},
+        { field: 'col7', headerName: 'Royalty', width: 80, editable: true , headerClassName: 'super-app-theme--header'},
+        { field: 'col8', headerName: 'DPCM', width: 100, editable: true, headerClassName: 'super-app-theme--header' },
+        { field: 'col9', headerName: 'Taxonomy Path', width: 300, editable: true , headerClassName: 'super-app-theme--header'},
+        { field: 'col10', headerName: 'Actions', width: 100 , headerClassName: 'super-app-theme--header'},
+    ];
 
 export default function TaxonomyMainGrid() {
     const rowsData = [
